@@ -1523,7 +1523,7 @@ footer {
 
         <div style="margin-top:20px;padding:16px;background:var(--amber-light);border:1px solid var(--amber-mid);border-radius:10px">
           <div style="font-size:13px;font-weight:700;color:var(--amber);margin-bottom:6px">📌 데이터 원천의 차이</div>
-          <p style="font-size:13px;color:var(--ink2);line-height:1.65">더존 SuperBook 자동전표 처리 시스템이 세금계산서·현금영수증·카드전표·은행거래내역을 실시간 수집·자동 분개합니다. 결산 전 단계의 <strong>미기장 원천 데이터</strong>를 월 단위로 제공하는 곳은 국내에서 테크핀레이팅스가 유일합니다.</p>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.65">더존 SuperBook 자동전표 처리 시스템이 세금계산서·현금영수증·카드전표·은행거래내역을 실시간 수집·자동 분개합니다. 결산 전 단계의 <strong>기장 원천 데이터</strong>를 월 단위로 제공하는 곳은 국내에서 테크핀레이팅스가 유일합니다.</p>
           <div style="margin-top:14px;border-radius:8px;overflow:hidden;border:1px solid var(--amber-mid);background:#fff">
             <span class="img-lightbox-trigger" onclick="openLightbox(this.querySelector('img'), '더존 세금계산서 전표 → SuperBook 자동 분개 프로세스')"><img src="img/img_1.png" alt="더존 SuperBook 자동전표 처리 시스템 — 세금계산서 원본과 전자세금계산서 분개 화면" style="cursor:zoom-in;width:100%;display:block;max-height:320px;object-fit:cover;object-position:center top"/></span>
           </div>
@@ -1531,70 +1531,7 @@ footer {
       </div>
     </div>
 
-    <div class="da-domains reveal d3">
 
-      <!-- 매출·매입 동향: 거래처별 월별 매출채권 회수기간 강조 -->
-      <div class="da-domain-card">
-        <div class="icon">💰</div>
-        <div class="title">매출·매입 동향</div>
-        <div class="sub">월별 매출액·매입액, 거래처 수 변화, 부가율, 전년동기 대비 성장 모멘텀 파악</div>
-        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
-          <span style="display:inline-block;background:#1B3A5C;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px">★ 거래처별 월별 매출채권 회수기간</span>
-        </div>
-      </div>
-
-      <!-- 가동능력: 전력비·원재료비 추이 강조 (기존 CB 전혀 없음) -->
-      <div class="da-domain-card highlight">
-        <div class="icon">🏭</div>
-        <div class="title">가동능력 (영업현장)</div>
-        <div class="sub">전력비·통신비·원재료비 추이로 실제 영업현장 및 생산활동 수준 파악</div>
-        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
-          <span style="display:inline-block;background:#1B3A5C;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px">★ 전력비·원재료비 월별 추이</span>
-          <span style="display:inline-block;background:#1B3A5C;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px">★ 통신비 추이</span>
-        </div>
-      </div>
-
-      <!-- 거래 안정성: 거래처 부도어음·수표 비중 강조 -->
-      <div class="da-domain-card">
-        <div class="icon">🔗</div>
-        <div class="title">거래 안정성</div>
-        <div class="sub">상위 거래처 집중도, 부도어음 비중, 매출·매입처 변동으로 공급망 리스크 점검</div>
-        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
-          <span style="display:inline-block;background:#1B3A5C;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px">★ 거래처 부도어음·수표 비중</span>
-        </div>
-      </div>
-
-      <!-- 지급 능력: 당좌예금비율 강조 (부도 예측 단변량 1위) -->
-      <div class="da-domain-card">
-        <div class="icon">💳</div>
-        <div class="title">지급 능력</div>
-        <div class="sub">지급어음·외상매입금·미지급금·당좌비율로 단기 상환 및 결제 능력 분석</div>
-        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
-          <span style="display:inline-block;background:#1B3A5C;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px">★ 당좌예금비율 — 단변량 AR 1위</span>
-        </div>
-      </div>
-
-      <!-- 경영 신뢰성: 대표자 가지급금 강조 (기존 CB 전혀 없음) -->
-      <div class="da-domain-card highlight">
-        <div class="icon">👤</div>
-        <div class="title">경영 신뢰성</div>
-        <div class="sub">결산 전 대표자 가지급금 잔액·발생 횟수, 접대비, 감가상각비로 자금운영 투명성 진단</div>
-        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
-          <span style="display:inline-block;background:#1B3A5C;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px">★ 대표자 가지급금 잔액·발생횟수</span>
-        </div>
-      </div>
-
-      <!-- 조직 관리: 월별 입퇴사율 강조 -->
-      <div class="da-domain-card">
-        <div class="icon">👥</div>
-        <div class="title">조직 관리</div>
-        <div class="sub">월별 근속·입사·퇴사자 수, 연령·근속별 급여, 입퇴사율로 운영 안정성 분석</div>
-        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
-          <span style="display:inline-block;background:#1B3A5C;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px">★ 월별 입퇴사율 실시간 추적</span>
-        </div>
-      </div>
-
-    </div>
   </div>
 </section>
 
