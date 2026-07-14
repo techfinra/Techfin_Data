@@ -2441,7 +2441,386 @@ document.addEventListener('keydown', function(e) {
   <div class="wrap">
     <div class="sec-label reveal"><span class="sec-num">03</span>결산이 놓치는 것</div>
     <h2 class="sh reveal d1">무너지는 과정은<br><span class="hl underline-draw">월 단위로만</span> 보입니다.</h2>
-    <p class="lead-text reveal d2">"문제는 위기가 없었던 것이 아니라, 위기를 알 수 없었다는 점입니다." — 투자 이후에도 기업의 재무·현금흐름 변화는 실시간으로 공유되지 않았고, 위기는 결산 이후에야 명확히 확인되었습니다.</p>
+    <p class="lead-text reveal d2">"어쩌면 막을 수 있었던 회생 절차, 데이터는 이미 <strong>15개월 전부터</strong> 경고하고 있었습니다."</p>
+
+    <!-- ① 타임라인 -->
+    <div class="reveal d2" style="margin-top:32px;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);">
+      <div style="background:#F8FAFC;border-bottom:1px solid var(--border);padding:12px 20px;font-size:12px;font-weight:700;color:var(--ink2);">정○각 기업운영 Timeline</div>
+      <div style="padding:24px 20px 20px;position:relative;">
+
+        <!-- 진행 라인 -->
+        <div style="position:relative;height:6px;background:#E5E7EB;border-radius:3px;margin:0 0 0 0;">
+          <div style="position:absolute;left:0;width:28%;height:100%;background:#059669;border-radius:3px 0 0 3px;"></div>
+          <div style="position:absolute;left:28%;width:22%;height:100%;background:#D97706;"></div>
+          <div style="position:absolute;left:50%;width:30%;height:100%;background:#DC2626;"></div>
+          <div style="position:absolute;left:80%;width:20%;height:100%;background:#7F1D1D;border-radius:0 3px 3px 0;"></div>
+          <!-- 포착 가능 영역 표시 -->
+          <div style="position:absolute;left:50%;width:30%;height:28px;top:-11px;background:rgba(37,99,235,0.08);border:1.5px dashed #2563EB;border-radius:4px;display:flex;align-items:center;justify-content:center;">
+            <span style="font-size:9px;font-weight:800;color:#2563EB;white-space:nowrap;">✓ 선제적 포착 가능</span>
+          </div>
+        </div>
+
+        <!-- 타임라인 노드들 -->
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:16px;">
+          <div style="text-align:center;padding:0 4px;">
+            <div style="width:12px;height:12px;border-radius:50%;background:#059669;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(5,150,105,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#059669;margin-bottom:3px;">'22~'23년</div>
+            <div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:6px;padding:6px 8px;font-size:11px;font-weight:700;color:#166534;margin-bottom:6px;">은행/캐피탈 대출</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">브릿지론 370억<br>운영자금 100억</div>
+          </div>
+          <div style="text-align:center;padding:0 4px;">
+            <div style="width:12px;height:12px;border-radius:50%;background:#D97706;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(217,119,6,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#D97706;margin-bottom:3px;">'24년 3월</div>
+            <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:6px;padding:6px 8px;font-size:11px;font-weight:700;color:#92400E;margin-bottom:6px;">VC 후속 투자</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">신규 100억<br>누적 1,200억</div>
+          </div>
+          <div style="text-align:center;padding:0 4px;position:relative;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#DC2626;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(220,38,38,0.25);"></div>
+            <div style="font-size:10px;font-weight:800;color:#DC2626;margin-bottom:3px;">'24년 4월</div>
+            <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:6px;padding:6px 8px;font-size:11px;font-weight:700;color:#DC2626;margin-bottom:6px;">완전 자본잠식</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">현금잔액 급락</div>
+          </div>
+          <div style="text-align:center;padding:0 4px;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#DC2626;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(220,38,38,0.25);"></div>
+            <div style="font-size:10px;font-weight:800;color:#DC2626;margin-bottom:3px;">'24년 11~12월</div>
+            <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:6px;padding:6px 8px;font-size:11px;font-weight:700;color:#DC2626;margin-bottom:6px;">자본잠식 누적</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">현금잔액 최저<br>부채비율 급상승</div>
+          </div>
+          <div style="text-align:center;padding:0 4px;">
+            <div style="width:16px;height:16px;border-radius:50%;background:#7F1D1D;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 4px rgba(127,29,29,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#7F1D1D;margin-bottom:3px;">'25년 7월</div>
+            <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:6px;padding:6px 8px;font-size:11px;font-weight:700;color:#7F1D1D;margin-bottom:6px;">기업회생 신청</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;font-style:italic;">'26년 현재 진행중</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 월별 재무 차트 2개 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;" class="reveal d2">
+
+      <!-- 자본총계 & 현금 차트 -->
+      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);">
+        <div style="background:#1B3A5C;padding:10px 14px;">
+          <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:2px;">'월 단위 재무제표' 이상징후 분석 (단위: 백만원)</div>
+          <div style="font-size:13px;font-weight:800;color:#fff;">자본총계 & 현금 추이</div>
+        </div>
+        <div style="padding:12px 14px;">
+          <svg viewBox="0 0 340 180" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,-apple-system,sans-serif">
+            <!-- 배경 -->
+            <rect width="340" height="180" fill="#FAFAFA" rx="4"/>
+            <!-- Y축 -->
+            <line x1="52" y1="10" x2="52" y2="145" stroke="#E5E7EB" stroke-width="1"/>
+            <!-- 0선 -->
+            <line x1="52" y1="55" x2="320" y2="55" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="48" y="59" text-anchor="end" font-size="8" fill="#9CA3AF">0</text>
+            <text x="48" y="18" text-anchor="end" font-size="8" fill="#059669">5,000</text>
+            <text x="48" y="100" text-anchor="end" font-size="8" fill="#DC2626">(10,000)</text>
+            <text x="48" y="140" text-anchor="end" font-size="8" fill="#DC2626">(20,000)</text>
+
+            <!-- 4월 포착 영역 -->
+            <rect x="90" y="10" width="36" height="135" fill="rgba(220,38,38,0.06)" rx="2"/>
+            <text x="108" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="#DC2626">4월</text>
+
+            <!-- 11~12월 영역 -->
+            <rect x="196" y="10" width="48" height="135" fill="rgba(220,38,38,0.06)" rx="2"/>
+            <text x="220" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="#DC2626">11~12월</text>
+
+            <!-- 결산시점 -->
+            <line x1="240" y1="10" x2="240" y2="145" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="242" y="18" font-size="8" fill="#7C3AED" font-weight="700">결산시점</text>
+
+            <!-- 자본총계 라인 (내려가는) 실제 데이터 반영 -->
+            <polyline points="60,50 78,52 90,58 108,75 126,95 144,110 162,118 180,122 196,126 214,130 232,134 250,138 268,140 286,141 304,142"
+              fill="none" stroke="#6B7280" stroke-width="2" stroke-linejoin="round"/>
+            <!-- 현금 라인 (낮은 수준) -->
+            <polyline points="60,53 78,53 90,53 108,54 126,54 144,54 162,55 180,55 196,54 214,130 232,144 250,144 268,143 286,143 304,143"
+              fill="none" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+
+            <!-- 완전자본잠식 라벨 -->
+            <text x="108" y="90" text-anchor="middle" font-size="8" fill="#DC2626">완전자본잠식</text>
+            <!-- 최저치 -->
+            <text x="220" y="142" text-anchor="middle" font-size="8" fill="#2563EB">최저치 32만원</text>
+
+            <!-- X축 레이블 -->
+            <text x="60" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">24.3</text>
+            <text x="108" y="155" text-anchor="middle" font-size="8" fill="#DC2626">24.4</text>
+            <text x="214" y="155" text-anchor="middle" font-size="8" fill="#DC2626">24.11</text>
+            <text x="268" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">25.3</text>
+            <text x="304" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">25.5</text>
+
+            <!-- 범례 -->
+            <line x1="56" y1="168" x2="72" y2="168" stroke="#6B7280" stroke-width="2"/>
+            <text x="75" y="171" font-size="8" fill="#374151">자본총계</text>
+            <line x1="120" y1="168" x2="136" y2="168" stroke="#2563EB" stroke-width="2"/>
+            <text x="139" y="171" font-size="8" fill="#374151">현금</text>
+          </svg>
+          <div style="font-size:11px;color:#DC2626;font-weight:700;text-align:center;margin-top:4px;">'25.7월 회생신청 전 '24.4월부터 재무 건전성 이상 신호 지속</div>
+        </div>
+      </div>
+
+      <!-- 차입금의존도 & 유동비율 차트 -->
+      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);">
+        <div style="background:#1B3A5C;padding:10px 14px;">
+          <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:2px;">'월 단위 재무제표' 이상징후 분석</div>
+          <div style="font-size:13px;font-weight:800;color:#fff;">차입금의존도 & 유동비율</div>
+        </div>
+        <div style="padding:12px 14px;">
+          <svg viewBox="0 0 340 180" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,-apple-system,sans-serif">
+            <rect width="340" height="180" fill="#FAFAFA" rx="4"/>
+            <line x1="52" y1="10" x2="52" y2="145" stroke="#E5E7EB" stroke-width="1"/>
+            <line x1="52" y1="55" x2="320" y2="55" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,3"/>
+            <!-- Y축 레이블 -->
+            <text x="48" y="14" text-anchor="end" font-size="8" fill="#9CA3AF">100%</text>
+            <text x="48" y="59" text-anchor="end" font-size="8" fill="#9CA3AF">85%</text>
+            <text x="48" y="100" text-anchor="end" font-size="8" fill="#9CA3AF">80%</text>
+            <text x="48" y="140" text-anchor="end" font-size="8" fill="#9CA3AF">70%</text>
+
+            <!-- 11~12월 영역 -->
+            <rect x="196" y="10" width="48" height="135" fill="rgba(220,38,38,0.06)" rx="2"/>
+            <text x="220" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="#DC2626">11~12월</text>
+
+            <!-- 결산시점 -->
+            <line x1="240" y1="10" x2="240" y2="145" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="242" y="18" font-size="8" fill="#7C3AED" font-weight="700">결산시점</text>
+
+            <!-- 차입금의존도 (높은 수준 유지, 11~12월 급상승) -->
+            <polyline points="60,62 78,63 96,61 114,60 132,60 150,59 168,59 186,58 204,57 214,56 232,80 250,30 268,25 286,28 304,32"
+              fill="none" stroke="#6B7280" stroke-width="2" stroke-linejoin="round"/>
+
+            <!-- 유동비율 (낮은 수준, 11~12월 더 하락) -->
+            <polyline points="60,118 78,120 96,116 114,112 132,111 150,109 168,110 186,108 204,107 214,106 232,130 250,120 268,115 286,112 304,110"
+              fill="none" stroke="#2563EB" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5,3"/>
+
+            <!-- X축 레이블 -->
+            <text x="60" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">24.3</text>
+            <text x="150" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">24.8</text>
+            <text x="214" y="155" text-anchor="middle" font-size="8" fill="#DC2626">24.11</text>
+            <text x="268" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">25.3</text>
+            <text x="304" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">25.5</text>
+
+            <!-- 범례 -->
+            <line x1="56" y1="168" x2="72" y2="168" stroke="#6B7280" stroke-width="2"/>
+            <text x="75" y="171" font-size="8" fill="#374151">차입금의존도</text>
+            <line x1="140" y1="168" x2="156" y2="168" stroke="#2563EB" stroke-width="2" stroke-dasharray="4,2"/>
+            <text x="159" y="171" font-size="8" fill="#374151">유동비율</text>
+          </svg>
+          <div style="font-size:11px;color:#DC2626;font-weight:700;text-align:center;margin-top:4px;">'24.11월 급격한 악화 국면으로 전환된 것으로 판단됨</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ③ 런웨이 차트 -->
+    <div class="reveal d3" style="margin-top:20px;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);">
+      <div style="background:linear-gradient(135deg,#1B3A5C,#2563EB);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-bottom:2px;">스타트업 생존지표</div>
+          <div style="font-size:14px;font-weight:800;color:#fff;">런웨이(Runway) — 정○각 현금 유동성</div>
+        </div>
+        <div style="background:rgba(220,38,38,0.9);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">'24년 하반기 런웨이 0 수준</div>
+      </div>
+      <div style="padding:16px 20px;">
+        <svg viewBox="0 0 680 160" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,-apple-system,sans-serif">
+          <rect width="680" height="160" fill="#FAFAFA" rx="4"/>
+
+          <!-- 월 레이블 & 막대 (현금보유액 - 회색막대) -->
+          <!-- 각 달: 24.06~25.05 (12개) -->
+          <!-- 막대 너비 40px, 간격 16px, 시작 x=30 -->
+
+          <!-- 24.06: 16,959,909 → 높이 약 85 -->
+          <rect x="32" y="30" width="36" height="85" fill="#D1D5DB" rx="2"/>
+          <!-- 24.07: 6,675,269 → 높이 약 33 -->
+          <rect x="84" y="82" width="36" height="33" fill="#D1D5DB" rx="2"/>
+          <!-- 24.08: 2,853,320 → 높이 약 14 -->
+          <rect x="136" y="101" width="36" height="14" fill="#D1D5DB" rx="2"/>
+          <!-- 24.09: 597,341 → 높이 약 3 -->
+          <rect x="188" y="112" width="36" height="3" fill="#D1D5DB" rx="2"/>
+          <!-- 24.10: 2,065,847 → 높이 약 10 -->
+          <rect x="240" y="105" width="36" height="10" fill="#D1D5DB" rx="2"/>
+          <!-- 24.11: 14,322,502 → 높이 약 72 -->
+          <rect x="292" y="43" width="36" height="72" fill="#93C5FD" rx="2"/>
+          <!-- 24.12: 324,383 → 높이 약 2 -->
+          <rect x="344" y="113" width="36" height="2" fill="#EF4444" rx="2"/>
+          <!-- 25.01: 11,430,806 → 높이 약 57 -->
+          <rect x="396" y="58" width="36" height="57" fill="#93C5FD" rx="2"/>
+          <!-- 25.02: 51,858,307 → 높이 약 115 (최대) -->
+          <rect x="448" y="0" width="36" height="115" fill="#93C5FD" rx="2"/>
+          <!-- 25.03: 150,792,788 → 높이 약 115 (비율 조정) -->
+          <rect x="500" y="5" width="36" height="110" fill="#93C5FD" rx="2"/>
+          <!-- 25.04: 179,445,558 -->
+          <rect x="552" y="8" width="36" height="107" fill="#93C5FD" rx="2"/>
+          <!-- 25.05: 212,732,296 -->
+          <rect x="604" y="12" width="36" height="103" fill="#93C5FD" rx="2"/>
+
+          <!-- 런웨이 라인 (0 → 서서히 증가) -->
+          <polyline points="50,115 102,115 154,115 206,115 258,115 310,115 362,115 414,115 466,112 518,108 570,106 622,104"
+            fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- 런웨이 포인트 -->
+          <circle cx="50" cy="115" r="3" fill="#F59E0B"/>
+          <circle cx="362" cy="115" r="5" fill="#EF4444"/>
+          <circle cx="622" cy="104" r="3" fill="#F59E0B"/>
+
+          <!-- 런웨이 0 표시 -->
+          <line x1="30" y1="115" x2="410" y2="115" stroke="#EF4444" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+          <text x="200" y="110" text-anchor="middle" font-size="9" fill="#EF4444" font-weight="700">런웨이 0 수준 구간</text>
+
+          <!-- 바닥선 -->
+          <line x1="30" y1="116" x2="650" y2="116" stroke="#E5E7EB" stroke-width="1"/>
+
+          <!-- X축 레이블 -->
+          <text x="50" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">24.06</text>
+          <text x="102" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">24.07</text>
+          <text x="154" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">24.08</text>
+          <text x="206" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">24.09</text>
+          <text x="258" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">24.10</text>
+          <text x="310" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">24.11</text>
+          <text x="362" y="130" text-anchor="middle" font-size="8" fill="#DC2626">24.12</text>
+          <text x="414" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">25.01</text>
+          <text x="466" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">25.02</text>
+          <text x="518" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">25.03</text>
+          <text x="570" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">25.04</text>
+          <text x="622" y="130" text-anchor="middle" font-size="8" fill="#9CA3AF">25.05</text>
+
+          <!-- 범례 -->
+          <rect x="30" y="145" width="12" height="8" fill="#93C5FD" rx="1"/>
+          <text x="46" y="153" font-size="8" fill="#374151">현금보유액</text>
+          <line x1="120" y1="149" x2="136" y2="149" stroke="#F59E0B" stroke-width="2.5"/>
+          <text x="140" y="153" font-size="8" fill="#374151">런웨이</text>
+          <rect x="190" y="145" width="12" height="8" fill="#EF4444" rx="1"/>
+          <text x="206" y="153" font-size="8" fill="#374151">최저치(24.12)</text>
+        </svg>
+
+        <!-- 런웨이 데이터 테이블 요약 -->
+        <div style="overflow-x:auto;margin-top:12px;">
+          <table style="width:100%;border-collapse:collapse;font-size:10px;min-width:500px;">
+            <thead>
+              <tr style="background:#F1F5F9;">
+                <td style="padding:5px 8px;font-weight:700;color:#374151;border:1px solid #E2E8F0;">구분</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;color:#6B7280;">24.06</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;color:#6B7280;">24.09</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;color:#6B7280;">24.11</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;font-weight:700;color:#DC2626;">24.12</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;color:#6B7280;">25.01</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;color:#2563EB;">25.05</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:5px 8px;font-weight:600;border:1px solid #E2E8F0;color:#374151;">현금보유액</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;">16,960만</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;">597만</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;">14,323만</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;font-weight:700;color:#DC2626;">324만</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;">11,431만</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;color:#2563EB;">21.3억</td>
+              </tr>
+              <tr style="background:#FFFBEB;">
+                <td style="padding:5px 8px;font-weight:700;color:#92400E;border:1px solid #E2E8F0;">런웨이</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;font-weight:700;color:#DC2626;">0</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;font-weight:700;color:#DC2626;">0</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;font-weight:700;color:#DC2626;">0</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;font-weight:700;color:#DC2626;">0</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;">0.1</td>
+                <td style="padding:5px 6px;text-align:center;border:1px solid #E2E8F0;color:#2563EB;">0.2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:#374151;line-height:1.7;text-align:center;">'24년 6월경부터 현금 지출 지속에 따른 유동성 저하 신호가 포착되었으며, <strong style="color:#DC2626;">'24년 12월 보유액이 최저치에 도달</strong>하며 급격한 재무 악화 국면으로 진입한 것으로 판단됨</div>
+      </div>
+    </div>
+
+    <!-- ④ 하단 결론 -->
+    <div class="reveal d3" style="margin-top:20px;padding:18px 24px;background:var(--navy);border-radius:10px;display:flex;align-items:center;gap:16px;">
+      <div style="font-size:32px;flex-shrink:0;">💡</div>
+      <div>
+        <div style="font-size:14px;font-weight:800;color:#fff;margin-bottom:4px;">연 단위 결산 정보의 공백기 동안 발생하는 수많은 변수들</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.75);line-height:1.7;">월 단위 실시간 데이터 기반의 기업 모니터링은 선제적 리스크 관리를 위한 확실한 대안입니다. 정○각 사례처럼 데이터는 이미 <strong style="color:#60A5FA;">15개월 전부터 경고하고 있었습니다.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- 정육각 타임라인 -->
+    <div class="reveal d2" style="margin-top:36px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+        <div style="background:#1B3A5C;color:#fff;font-size:11px;font-weight:800;padding:4px 12px;border-radius:4px;letter-spacing:0.5px;">실제 사례</div>
+        <div style="font-size:15px;font-weight:800;color:var(--ink);">㈜정○각 — 기업 붕괴는 이미 15개월 전부터 예고되어 있었습니다</div>
+      </div>
+
+      <!-- 타임라인 -->
+      <div style="background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);">
+        <!-- 타임라인 헤더 -->
+        <div style="background:linear-gradient(135deg,#1B3A5C 0%,#2563EB 100%);padding:16px 24px;">
+          <div style="font-size:12px;color:rgba(255,255,255,0.65);margin-bottom:4px;">정○각 기업운영 Timeline</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:13px;color:#fff;font-weight:700;">'16년 설립 → '22~'23년 외형확장 → '24년 완전자본잠식 → '25년 7월 회생신청</div>
+            <div style="background:rgba(220,38,38,0.9);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;">⚠ 회생신청 '25.07</div>
+          </div>
+        </div>
+
+        <!-- 타임라인 스텝 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;">
+          <!-- 연결선 -->
+          <div style="position:absolute;top:36px;left:10%;right:10%;height:2px;background:linear-gradient(to right,#059669,#D97706,#D97706,#DC2626,#DC2626);z-index:0;"></div>
+
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#059669;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(5,150,105,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#059669;margin-bottom:4px;">'16~'21년</div>
+            <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:4px;">외형 성장</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">투자 유치 통해<br>무리한 외형 확장</div>
+          </div>
+
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#D97706;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(217,119,6,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#D97706;margin-bottom:4px;">'22~'23년</div>
+            <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:4px;">무리한 M&A</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">대규모 기업인수<br>차입성 자금 확대</div>
+          </div>
+
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#D97706;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(217,119,6,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#D97706;margin-bottom:4px;">'24년 3~4월</div>
+            <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:4px;">완전자본잠식</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">브릿지론 370억<br>운영자금 100억</div>
+          </div>
+
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#DC2626;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(220,38,38,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#DC2626;margin-bottom:4px;">'24년 11~12월</div>
+            <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:4px;">현금잔액 최저</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">부채비율 급상승<br>유동성 임계점</div>
+          </div>
+
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="width:16px;height:16px;border-radius:50%;background:#DC2626;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 4px rgba(220,38,38,0.25);"></div>
+            <div style="font-size:10px;font-weight:800;color:#DC2626;margin-bottom:4px;">'25년 7월</div>
+            <div style="font-size:11px;font-weight:700;color:#DC2626;margin-bottom:4px;">기업회생 신청</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">VC 누적 1,200억<br>손실 불가피</div>
+          </div>
+        </div>
+
+        <!-- 조기경보 포인트 -->
+        <div style="margin:0 24px 20px;padding:14px 16px;background:linear-gradient(135deg,#EFF6FF,#F0FDF4);border:1px solid #BFDBFE;border-radius:10px;display:flex;align-items:flex-start;gap:12px;">
+          <div style="font-size:20px;flex-shrink:0;">🔍</div>
+          <div>
+            <div style="font-size:12px;font-weight:800;color:#1B3A5C;margin-bottom:4px;">당사 플랫폼 사용 시 선제적 포착 가능 시점</div>
+            <div style="font-size:12px;color:#374151;line-height:1.7;">'24년 3월 <strong>완전자본잠식 발생 시점</strong>부터 월별 자본총계·현금잔액 급락이 크레디뷰에 실시간 반영됩니다. 결산을 기다릴 필요 없이 <strong>최소 15개월 전</strong> 이상징후를 포착하고 선제 대응이 가능합니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ④ 하단 결론 -->
+    <div class="reveal d3" style="margin-top:20px;padding:18px 24px;background:var(--navy);border-radius:10px;display:flex;align-items:center;gap:16px;">
+      <div style="font-size:32px;flex-shrink:0;">💡</div>
+      <div>
+        <div style="font-size:14px;font-weight:800;color:#fff;margin-bottom:4px;">연 단위 결산 정보의 공백기 동안 발생하는 수많은 변수들</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.75);line-height:1.7;">월 단위 실시간 데이터 기반의 기업 모니터링은 선제적 리스크 관리를 위한 확실한 대안입니다. 정○각 사례처럼 데이터는 이미 <strong style="color:#60A5FA;">15개월 전부터 경고하고 있었습니다.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- 정육각 타임라인 -->
     <div class="reveal d2" style="margin-top:36px;">
