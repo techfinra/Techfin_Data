@@ -79,6 +79,75 @@ nav {
 #fullscreen-btn:hover { background: var(--navy); color: #fff; }
 #fullscreen-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 
+/* ── 사이드 진행 메뉴 ── */
+#side-nav {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+#side-nav.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.sn-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: none;
+}
+.sn-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(27,58,92,0.25);
+  border: 2px solid rgba(27,58,92,0.3);
+  transition: all 0.3s cubic-bezier(.17,.67,.35,1.3);
+  flex-shrink: 0;
+}
+.sn-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(27,58,92,0.5);
+  white-space: nowrap;
+  background: rgba(255,255,255,0.92);
+  padding: 3px 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s;
+  pointer-events: none;
+}
+.sn-item:hover .sn-label,
+.sn-item.active .sn-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+.sn-item.active .sn-dot {
+  background: var(--navy);
+  border-color: var(--navy);
+  transform: scale(1.4);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+}
+.sn-item.active .sn-label {
+  color: var(--navy);
+}
+.sn-step {
+  font-size: 9px;
+  color: rgba(27,58,92,0.4);
+  margin-right: 2px;
+}
+@media(max-width:768px){ #side-nav { display: none; } }
+
 /* LAYOUT */
 .wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 section { padding: 100px 0; }
@@ -1251,6 +1320,42 @@ footer {
 
 <!-- NAV -->
 <nav>
+
+<!-- 사이드 진행 메뉴 -->
+<div id="side-nav">
+  <a class="sn-item" href="#company-intro" onclick="scrollTo_(event,'company-intro')">
+    <div class="sn-dot"></div>
+    <div class="sn-label"><span class="sn-step">01</span> 테크핀레이팅스</div>
+  </a>
+  <a class="sn-item" href="#data-advantage" onclick="scrollTo_(event,'data-advantage')">
+    <div class="sn-dot"></div>
+    <div class="sn-label"><span class="sn-step">02</span> 데이터 강점</div>
+  </a>
+  <a class="sn-item" href="#credit-rating" onclick="scrollTo_(event,'credit-rating')">
+    <div class="sn-dot"></div>
+    <div class="sn-label"><span class="sn-step">03</span> 신용평가 등급</div>
+  </a>
+  <a class="sn-item" href="#grade" onclick="scrollTo_(event,'grade')">
+    <div class="sn-dot"></div>
+    <div class="sn-label"><span class="sn-step">04</span> 변별력 검증</div>
+  </a>
+  <a class="sn-item" href="#signals" onclick="scrollTo_(event,'signals')">
+    <div class="sn-dot"></div>
+    <div class="sn-label"><span class="sn-step">05</span> 월별 신호</div>
+  </a>
+  <a class="sn-item" href="#platform" onclick="scrollTo_(event,'platform')">
+    <div class="sn-dot"></div>
+    <div class="sn-label"><span class="sn-step">06</span> 크레디뷰 플랫폼</div>
+  </a>
+  <a class="sn-item" href="#casestudy" onclick="scrollTo_(event,'casestudy')">
+    <div class="sn-dot"></div>
+    <div class="sn-label"><span class="sn-step">07</span> 동의서 이슈</div>
+  </a>
+  <a class="sn-item" href="#refs" onclick="scrollTo_(event,'refs')">
+    <div class="sn-dot"></div>
+    <div class="sn-label"><span class="sn-step">08</span> 레퍼런스</div>
+  </a>
+</div>
   <div class="nav-logo">
     <div class="badge">TechFin</div>
     <div class="name">레이팅스</div>
@@ -2837,131 +2942,129 @@ document.addEventListener('keydown', function(e) {
 </footer>
 
 <script>
-// ── 1. 기본 reveal ──
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
-  });
-}, { threshold: 0.10, rootMargin: '0px 0px -32px 0px' });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// ══════════════════════════════════════
+// 1. 사이드 네비 스크롤 감지
+// ══════════════════════════════════════
+const sideNav = document.getElementById('side-nav');
+const snSections = ['company-intro','data-advantage','credit-rating','grade','signals','platform','casestudy','refs'];
+const snItems = document.querySelectorAll('.sn-item');
 
-// ── 2. underline-draw (hl 포함) ──
+function scrollTo_(e, id) {
+  e.preventDefault();
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function updateSideNav() {
+  const scrollY = window.scrollY;
+  // 100px 이상 스크롤 시 사이드메뉴 표시
+  if (scrollY > 100) sideNav.classList.add('visible');
+  else sideNav.classList.remove('visible');
+
+  // 현재 섹션 감지
+  let current = 0;
+  snSections.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 120) current = i;
+  });
+  snItems.forEach((item, i) => {
+    item.classList.toggle('active', i === current);
+  });
+}
+window.addEventListener('scroll', updateSideNav, { passive: true });
+updateSideNav();
+
+// ══════════════════════════════════════
+// 2. 기본 reveal
+// ══════════════════════════════════════
+const revealIo = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('on'); revealIo.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealIo.observe(el));
+
+// ══════════════════════════════════════
+// 3. underline-draw
+// ══════════════════════════════════════
 const ulIo = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); ulIo.unobserve(e.target); } });
-}, { threshold: 0.4 });
+}, { threshold: 0.3 });
 document.querySelectorAll('.underline-draw').forEach(el => ulIo.observe(el));
 
-// ── 3. stat-pop ──
-const spIo = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); spIo.unobserve(e.target); } });
-}, { threshold: 0.3 });
-document.querySelectorAll('.stat-pop').forEach(el => spIo.observe(el));
+// ══════════════════════════════════════
+// 4. flash-in / stat-pop / slide-in
+// ══════════════════════════════════════
+const genericIo = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); genericIo.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.flash-in, .stat-pop, .slide-in-left, .slide-in-right, .scanline-reveal').forEach(el => genericIo.observe(el));
 
-// ── 4. flash-in ──
-const fiIo = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); fiIo.unobserve(e.target); } });
-}, { threshold: 0.2 });
-document.querySelectorAll('.flash-in').forEach(el => fiIo.observe(el));
-
-// ── 5. slide-in ──
-const siIo = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); siIo.unobserve(e.target); } });
-}, { threshold: 0.15 });
-document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => siIo.observe(el));
-
-// ── 6. 숫자 카운트업 ──
+// ══════════════════════════════════════
+// 5. 숫자 카운트업
+// ══════════════════════════════════════
 function animateCount(el) {
   const target = parseFloat(el.dataset.target);
-  const suffix = el.dataset.suffix || '';
-  const prefix = el.dataset.prefix || '';
+  if (isNaN(target)) return;
   const duration = 1400;
-  const isFloat = String(target).includes('.');
-  const decimals = isFloat ? (String(target).split('.')[1]?.length || 1) : 0;
+  const isFloat = String(el.dataset.target).includes('.');
+  const decimals = isFloat ? (String(el.dataset.target).split('.')[1]?.length || 1) : 0;
   const isComma = target >= 1000;
   const start = performance.now();
   function update(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
+    const progress = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1 - progress, 3);
     const current = target * ease;
-    let display;
-    if (decimals > 0) display = current.toFixed(decimals);
-    else if (isComma) display = Math.floor(current).toLocaleString();
-    else display = Math.floor(current).toString();
-    el.textContent = prefix + display;
+    let display = decimals > 0 ? current.toFixed(decimals)
+                : isComma ? Math.floor(current).toLocaleString()
+                : Math.floor(current).toString();
+    el.textContent = display;
     if (progress < 1) requestAnimationFrame(update);
-    else el.textContent = prefix + (decimals > 0 ? target.toFixed(decimals) : isComma ? target.toLocaleString() : target.toString());
+    else el.textContent = decimals > 0 ? target.toFixed(decimals)
+                        : isComma ? target.toLocaleString()
+                        : target.toString();
   }
   requestAnimationFrame(update);
 }
 const countIo = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateCount(e.target);
-      countIo.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
+  entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); countIo.unobserve(e.target); } });
+}, { threshold: 0.3 });
 document.querySelectorAll('[data-target]').forEach(el => countIo.observe(el));
 
-// ── 7. impact-word (키워드 팝) ──
+// ══════════════════════════════════════
+// 6. impact-word
+// ══════════════════════════════════════
 const iwIo = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      const words = e.target.querySelectorAll('.impact-word');
-      words.forEach((w, i) => setTimeout(() => w.classList.add('on'), i * 80));
+      e.target.querySelectorAll('.impact-word').forEach((w, i) => setTimeout(() => w.classList.add('on'), i * 80));
       iwIo.unobserve(e.target);
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.2 });
 document.querySelectorAll('.impact-container').forEach(el => iwIo.observe(el));
 
-// ── 8. char-reveal (글자별 순차 등장) ──
+// ══════════════════════════════════════
+// 7. char-reveal
+// ══════════════════════════════════════
 document.querySelectorAll('.char-reveal').forEach(el => {
   const text = el.textContent;
-  el.innerHTML = text.split('').map(c =>
-    c === ' ' ? ' ' : `<span>${c}</span>`
-  ).join('');
+  el.innerHTML = text.split('').map(c => c === ' ' ? ' ' : `<span>${c}</span>`).join('');
 });
 const crIo = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('on');
-      e.target.querySelectorAll('span').forEach((s, i) => {
-        s.style.transitionDelay = `${i * 0.04}s`;
-      });
+      e.target.querySelectorAll('span').forEach((s, i) => { s.style.transitionDelay = `${i * 0.04}s`; });
       crIo.unobserve(e.target);
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.3 });
 document.querySelectorAll('.char-reveal').forEach(el => crIo.observe(el));
 
-// ── 9. 섹션 진입 시 배경 스캔라인 ──
-const scanIo = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); scanIo.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.scanline-reveal').forEach(el => scanIo.observe(el));
-
-// ── 10. co-stat 숫자들에 카운트업 자동 적용 ──
-document.querySelectorAll('.co-stat-num').forEach(el => {
-  const num = parseFloat(el.dataset.target);
-  if (!isNaN(num) && num > 0) {
-    countIo.observe(el);
-    spIo.observe(el.closest('.stat-pop') || el);
-  }
-});
-
-// ── 11. AR/KS 숫자 카운트업 ──
-document.querySelectorAll('.gv-num, .kv-num').forEach(el => {
-  const raw = el.textContent.trim();
-  const num = parseFloat(raw);
-  if (!isNaN(num) && num > 0) {
-    el.dataset.target = num;
-    countIo.observe(el);
-  }
-});
-
-// ── EWS chart animation ──
+// ══════════════════════════════════════
+// 8. EWS chart
+// ══════════════════════════════════════
 const ewsSvg = document.getElementById('ewsSvg');
 if (ewsSvg) {
   const ewsIo = new IntersectionObserver((entries) => {
@@ -2978,7 +3081,9 @@ if (ewsSvg) {
   ewsIo.observe(ewsSvg);
 }
 
-// ── Grade bars ──
+// ══════════════════════════════════════
+// 9. Grade bars
+// ══════════════════════════════════════
 const gradeData = [
   { g: '1등급', v: 0.0 }, { g: '2등급', v: 0.11 }, { g: '3등급', v: 0.2 },
   { g: '4등급', v: 1.2 }, { g: '5등급', v: 2.49 }, { g: '6등급', v: 3.94 },
@@ -2990,23 +3095,17 @@ if (gb) {
   gradeData.forEach((d) => {
     const row = document.createElement('div'); row.className = 'gb-row';
     const pct = (d.v / maxV * 100);
-    let col = '#2563EB';
-    if (d.v >= 8) col = '#DC2626';
-    else if (d.v >= 3) col = '#D97706';
-    else if (d.v >= 1) col = '#CA8A04';
-    else col = '#059669';
+    let col = d.v >= 8 ? '#DC2626' : d.v >= 3 ? '#D97706' : d.v >= 1 ? '#CA8A04' : '#059669';
     row.innerHTML = `
       <div class="gb-lbl">${d.g}</div>
-      <div class="gb-track"><div class="gb-fill" data-w="${Math.max(pct, 1.5)}" style="background:${col}"></div></div>
+      <div class="gb-track"><div class="gb-fill" data-w="${Math.max(pct,1.5)}" style="background:${col}"></div></div>
       <div class="gb-val" style="color:${col}">${d.v.toFixed(d.v < 1 && d.v > 0 ? 2 : 1)}%</div>`;
     gb.appendChild(row);
   });
   const gbIo = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        gb.querySelectorAll('.gb-fill').forEach((f, i) => {
-          setTimeout(() => { f.style.width = f.dataset.w + '%'; }, i * 60);
-        });
+        gb.querySelectorAll('.gb-fill').forEach((f, i) => setTimeout(() => { f.style.width = f.dataset.w + '%'; }, i * 60));
         gbIo.unobserve(e.target);
       }
     });
