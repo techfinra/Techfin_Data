@@ -106,33 +106,31 @@ nav {
   text-decoration: none;
 }
 .sn-dot {
-  width: 8px !important; height: 8px !important;
-  border-radius: 50% !important;
-  background: #90A4AE !important;
-  border: 2px solid #607D8B !important;
-  transition: all 0.35s cubic-bezier(.17,.67,.35,1.3);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #78909C;
+  border: 2px solid #546E7A;
   flex-shrink: 0;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+  transition: all 0.35s cubic-bezier(.17,.67,.35,1.3);
 }
 .sn-label {
   font-size: 11px;
   font-weight: 700;
-  color: rgba(27,58,92,0.5);
+  color: rgba(27,58,92,0.7);
   white-space: nowrap;
-  background: rgba(255,255,255,0.94);
+  background: rgba(255,255,255,0.95);
   padding: 3px 8px;
   border-radius: 4px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
   opacity: 0;
   transform: translateX(-8px);
   transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s;
   pointer-events: none;
 }
 .sn-item:hover .sn-dot {
-  background: rgba(27,58,92,0.35);
-  border-color: rgba(27,58,92,0.4);
+  background: #37474F;
+  border-color: #263238;
   transform: scale(1.2);
 }
 .sn-item:hover .sn-label {
@@ -142,8 +140,8 @@ nav {
 .sn-item.active .sn-dot {
   background: var(--navy);
   border-color: var(--navy);
-  transform: scale(1.5);
-  box-shadow: 0 0 0 4px rgba(27,58,92,0.15);
+  transform: scale(1.6);
+  box-shadow: 0 0 0 4px rgba(27,58,92,0.18);
 }
 .sn-item.active .sn-label {
   opacity: 1;
@@ -152,7 +150,7 @@ nav {
 }
 .sn-step {
   font-size: 9px;
-  color: rgba(27,58,92,0.4);
+  color: rgba(27,58,92,0.5);
   margin-right: 2px;
 }
 @media(max-width:768px){ #side-nav { display: none; } }
@@ -2972,11 +2970,9 @@ function scrollTo_(e, id) {
 
 function updateSideNav() {
   const scrollY = window.scrollY;
-  // 100px 이상 스크롤 시 사이드메뉴 표시
-  if (scrollY > 100) sideNav.classList.add('visible');
+  if (scrollY > 80) sideNav.classList.add('visible');
   else sideNav.classList.remove('visible');
 
-  // 현재 섹션 감지
   let current = 0;
   snSections.forEach((id, i) => {
     const el = document.getElementById(id);
@@ -2987,7 +2983,10 @@ function updateSideNav() {
   });
 }
 window.addEventListener('scroll', updateSideNav, { passive: true });
+// 페이지 로드 시 즉시 실행
 updateSideNav();
+// 혹시 늦게 로드되는 경우 대비
+setTimeout(updateSideNav, 300);
 
 // ══════════════════════════════════════
 // 2. 기본 reveal
