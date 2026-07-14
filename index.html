@@ -2506,54 +2506,43 @@ document.addEventListener('keydown', function(e) {
           <div style="font-size:13px;font-weight:800;color:#fff;">자본총계 & 현금 추이</div>
         </div>
         <div style="padding:12px 14px;">
-          <svg viewBox="0 0 340 180" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,-apple-system,sans-serif">
-            <!-- 배경 -->
-            <rect width="340" height="180" fill="#FAFAFA" rx="4"/>
-            <!-- Y축 -->
-            <line x1="52" y1="10" x2="52" y2="145" stroke="#E5E7EB" stroke-width="1"/>
-            <!-- 0선 -->
-            <line x1="52" y1="55" x2="320" y2="55" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,3"/>
-            <text x="48" y="59" text-anchor="end" font-size="8" fill="#9CA3AF">0</text>
-            <text x="48" y="18" text-anchor="end" font-size="8" fill="#059669">5,000</text>
-            <text x="48" y="100" text-anchor="end" font-size="8" fill="#DC2626">(10,000)</text>
-            <text x="48" y="140" text-anchor="end" font-size="8" fill="#DC2626">(20,000)</text>
-
-            <!-- 4월 포착 영역 -->
-            <rect x="90" y="10" width="36" height="135" fill="rgba(220,38,38,0.06)" rx="2"/>
-            <text x="108" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="#DC2626">4월</text>
-
-            <!-- 11~12월 영역 -->
-            <rect x="196" y="10" width="48" height="135" fill="rgba(220,38,38,0.06)" rx="2"/>
-            <text x="220" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="#DC2626">11~12월</text>
-
-            <!-- 결산시점 -->
-            <line x1="240" y1="10" x2="240" y2="145" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4,3"/>
-            <text x="242" y="18" font-size="8" fill="#7C3AED" font-weight="700">결산시점</text>
-
-            <!-- 자본총계 라인 (내려가는) 실제 데이터 반영 -->
-            <polyline points="60,50 78,52 90,58 108,75 126,95 144,110 162,118 180,122 196,126 214,130 232,134 250,138 268,140 286,141 304,142"
-              fill="none" stroke="#6B7280" stroke-width="2" stroke-linejoin="round"/>
-            <!-- 현금 라인 (낮은 수준) -->
-            <polyline points="60,53 78,53 90,53 108,54 126,54 144,54 162,55 180,55 196,54 214,130 232,144 250,144 268,143 286,143 304,143"
+          <svg viewBox="0 0 340 190" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,-apple-system,sans-serif">
+            <rect width="340" height="190" fill="#FAFAFA" rx="4"/>
+            <line x1="52" y1="10" x2="52" y2="140" stroke="#E5E7EB" stroke-width="1"/>
+            <line x1="320" y1="10" x2="320" y2="140" stroke="#E5E7EB" stroke-width="1"/>
+            <line x1="52" y1="13.6" x2="320" y2="13.6" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="3,3"/>
+            <text x="50" y="13" text-anchor="end" font-size="7.5" fill="#9CA3AF">0</text>
+            <text x="50" y="62" text-anchor="end" font-size="7.5" fill="#9CA3AF">(5,000)</text>
+            <text x="50" y="110" text-anchor="end" font-size="7.5" fill="#DC2626">(10,000)</text>
+            <text x="50" y="130" text-anchor="end" font-size="7.5" fill="#DC2626">(15,000)</text>
+            <text x="322" y="13" font-size="7.5" fill="#2563EB">250</text>
+            <text x="322" y="79" font-size="7.5" fill="#2563EB">125</text>
+            <text x="322" y="142" font-size="7.5" fill="#2563EB">0</text>
+            <text x="52" y="8" font-size="7" fill="#9CA3AF">(단위: 백만원)</text>
+            <rect x="62" y="10" width="19" height="130" fill="rgba(220,38,38,0.07)" rx="1"/>
+            <text x="71" y="22" text-anchor="middle" font-size="8" font-weight="800" fill="#DC2626">4월</text>
+            <line x1="71" y1="10" x2="71" y2="140" stroke="#DC2626" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+            <rect x="196" y="10" width="37" height="130" fill="rgba(220,38,38,0.07)" rx="1"/>
+            <text x="214" y="22" text-anchor="middle" font-size="8" font-weight="800" fill="#DC2626">11~12월</text>
+            <line x1="224" y1="10" x2="224" y2="140" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="226" y="20" font-size="7.5" fill="#7C3AED" font-weight="700">결산시점</text>
+            <polyline points="52.0,10.1 71.1,15.4 90.3,19.6 109.4,23.6 128.6,28.6 147.7,34.8 166.9,39.1 186.0,43.5 205.1,46.9 224.3,61.2 243.4,109.1 262.6,114.1 281.7,119.5 300.9,124.4 320.0,129.1"
+              fill="none" stroke="#6B7280" stroke-width="2.5" stroke-linejoin="round"/>
+            <polyline points="52.0,64.6 71.1,125.6 90.3,127.8 109.4,121.8 128.6,126.8 147.7,128.6 166.9,129.7 186.0,129.0 205.1,123.1 224.3,129.9 243.4,124.5 262.6,105.1 281.7,57.6 300.9,43.9 320.0,27.9"
               fill="none" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
-
-            <!-- 완전자본잠식 라벨 -->
-            <text x="108" y="90" text-anchor="middle" font-size="8" fill="#DC2626">완전자본잠식</text>
-            <!-- 최저치 -->
-            <text x="220" y="142" text-anchor="middle" font-size="8" fill="#2563EB">최저치 32만원</text>
-
-            <!-- X축 레이블 -->
-            <text x="60" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">24.3</text>
-            <text x="108" y="155" text-anchor="middle" font-size="8" fill="#DC2626">24.4</text>
-            <text x="214" y="155" text-anchor="middle" font-size="8" fill="#DC2626">24.11</text>
-            <text x="268" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">25.3</text>
-            <text x="304" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">25.5</text>
-
-            <!-- 범례 -->
-            <line x1="56" y1="168" x2="72" y2="168" stroke="#6B7280" stroke-width="2"/>
-            <text x="75" y="171" font-size="8" fill="#374151">자본총계</text>
-            <line x1="120" y1="168" x2="136" y2="168" stroke="#2563EB" stroke-width="2"/>
-            <text x="139" y="171" font-size="8" fill="#374151">현금</text>
+            <text x="82" y="30" font-size="7.5" fill="#DC2626" font-weight="600">완전자본잠식</text>
+            <text x="224" y="137" text-anchor="middle" font-size="7" fill="#2563EB">최저치 32만원</text>
+            <text x="52" y="152" text-anchor="middle" font-size="7.5" fill="#9CA3AF">24.3</text>
+            <text x="71" y="152" text-anchor="middle" font-size="7.5" fill="#DC2626">24.4</text>
+            <text x="147" y="152" text-anchor="middle" font-size="7.5" fill="#9CA3AF">24.8</text>
+            <text x="205" y="152" text-anchor="middle" font-size="7.5" fill="#DC2626">24.11</text>
+            <text x="224" y="152" text-anchor="middle" font-size="7.5" fill="#DC2626">24.12</text>
+            <text x="262" y="152" text-anchor="middle" font-size="7.5" fill="#9CA3AF">25.1</text>
+            <text x="320" y="152" text-anchor="middle" font-size="7.5" fill="#9CA3AF">25.5</text>
+            <line x1="56" y1="165" x2="72" y2="165" stroke="#6B7280" stroke-width="2.5"/>
+            <text x="75" y="168" font-size="8" fill="#374151">III. 자본총계 (좌)</text>
+            <line x1="175" y1="165" x2="191" y2="165" stroke="#2563EB" stroke-width="2"/>
+            <text x="194" y="168" font-size="8" fill="#374151">현금및현금등가물 (우)</text>
           </svg>
           <div style="font-size:11px;color:#DC2626;font-weight:700;text-align:center;margin-top:4px;">'25.7월 회생신청 전 '24.4월부터 재무 건전성 이상 신호 지속</div>
         </div>
@@ -2566,44 +2555,45 @@ document.addEventListener('keydown', function(e) {
           <div style="font-size:13px;font-weight:800;color:#fff;">차입금의존도 & 유동비율</div>
         </div>
         <div style="padding:12px 14px;">
-          <svg viewBox="0 0 340 180" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,-apple-system,sans-serif">
-            <rect width="340" height="180" fill="#FAFAFA" rx="4"/>
-            <line x1="52" y1="10" x2="52" y2="145" stroke="#E5E7EB" stroke-width="1"/>
-            <line x1="52" y1="55" x2="320" y2="55" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,3"/>
-            <!-- Y축 레이블 -->
-            <text x="48" y="14" text-anchor="end" font-size="8" fill="#9CA3AF">100%</text>
-            <text x="48" y="59" text-anchor="end" font-size="8" fill="#9CA3AF">85%</text>
-            <text x="48" y="100" text-anchor="end" font-size="8" fill="#9CA3AF">80%</text>
-            <text x="48" y="140" text-anchor="end" font-size="8" fill="#9CA3AF">70%</text>
-
+          <svg viewBox="0 0 340 190" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,-apple-system,sans-serif">
+            <rect width="340" height="190" fill="#FAFAFA" rx="4"/>
+            <line x1="52" y1="10" x2="52" y2="140" stroke="#E5E7EB" stroke-width="1"/>
+            <line x1="320" y1="10" x2="320" y2="140" stroke="#E5E7EB" stroke-width="1"/>
+            <text x="52" y="8" font-size="7" fill="#9CA3AF">(단위: %)</text>
+            <!-- 왼쪽 Y: 차입금의존도 75~100% -->
+            <text x="50" y="13" text-anchor="end" font-size="7.5" fill="#9CA3AF">100%</text>
+            <text x="50" y="75" text-anchor="end" font-size="7.5" fill="#9CA3AF">87%</text>
+            <text x="50" y="113" text-anchor="end" font-size="7.5" fill="#9CA3AF">82%</text>
+            <text x="50" y="142" text-anchor="end" font-size="7.5" fill="#9CA3AF">75%</text>
+            <!-- 오른쪽 Y: 유동비율 0~13% -->
+            <text x="322" y="13" font-size="7.5" fill="#2563EB">13%</text>
+            <text x="322" y="79" font-size="7.5" fill="#2563EB">6.5%</text>
+            <text x="322" y="142" font-size="7.5" fill="#2563EB">0%</text>
             <!-- 11~12월 영역 -->
-            <rect x="196" y="10" width="48" height="135" fill="rgba(220,38,38,0.06)" rx="2"/>
-            <text x="220" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="#DC2626">11~12월</text>
-
+            <rect x="196" y="10" width="37" height="130" fill="rgba(220,38,38,0.07)" rx="1"/>
+            <text x="214" y="22" text-anchor="middle" font-size="8" font-weight="800" fill="#DC2626">11~12월</text>
             <!-- 결산시점 -->
-            <line x1="240" y1="10" x2="240" y2="145" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4,3"/>
-            <text x="242" y="18" font-size="8" fill="#7C3AED" font-weight="700">결산시점</text>
-
-            <!-- 차입금의존도 (높은 수준 유지, 11~12월 급상승) -->
-            <polyline points="60,62 78,63 96,61 114,60 132,60 150,59 168,59 186,58 204,57 214,56 232,80 250,30 268,25 286,28 304,32"
-              fill="none" stroke="#6B7280" stroke-width="2" stroke-linejoin="round"/>
-
-            <!-- 유동비율 (낮은 수준, 11~12월 더 하락) -->
-            <polyline points="60,118 78,120 96,116 114,112 132,111 150,109 168,110 186,108 204,107 214,106 232,130 250,120 268,115 286,112 304,110"
+            <line x1="224" y1="10" x2="224" y2="140" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="226" y="20" font-size="7.5" fill="#7C3AED" font-weight="700">결산시점</text>
+            <!-- 차입금의존도 (실제 데이터) -->
+            <polyline points="52.0,103.5 71.1,102.8 90.3,104.8 109.4,106.5 128.6,107.2 147.7,109.9 166.9,109.7 186.0,112.2 205.1,113.7 224.3,88.1 243.4,40.4 262.6,39.2 281.7,44.2 300.9,46.7 320.0,53.2"
+              fill="none" stroke="#6B7280" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- 유동비율 (실제 데이터, 오른쪽 Y) -->
+            <polyline points="52.0,71.6 71.1,73.6 90.3,63.2 109.4,53.3 128.6,50.1 147.7,40.2 166.9,43.6 186.0,33.6 205.1,27.4 224.3,89.3 243.4,91.2 262.6,93.2 281.7,79.6 300.9,72.7 320.0,56.6"
               fill="none" stroke="#2563EB" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5,3"/>
-
             <!-- X축 레이블 -->
-            <text x="60" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">24.3</text>
-            <text x="150" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">24.8</text>
-            <text x="214" y="155" text-anchor="middle" font-size="8" fill="#DC2626">24.11</text>
-            <text x="268" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">25.3</text>
-            <text x="304" y="155" text-anchor="middle" font-size="8" fill="#9CA3AF">25.5</text>
-
+            <text x="52" y="152" text-anchor="middle" font-size="7.5" fill="#9CA3AF">24.3</text>
+            <text x="110" y="152" text-anchor="middle" font-size="7.5" fill="#9CA3AF">24.6</text>
+            <text x="166" y="152" text-anchor="middle" font-size="7.5" fill="#9CA3AF">24.9</text>
+            <text x="205" y="152" text-anchor="middle" font-size="7.5" fill="#DC2626">24.11</text>
+            <text x="243" y="152" text-anchor="middle" font-size="7.5" fill="#9CA3AF">25.1</text>
+            <text x="281" y="152" text-anchor="middle" font-size="7.5" fill="#9CA3AF">25.3</text>
+            <text x="320" y="152" text-anchor="middle" font-size="7.5" fill="#9CA3AF">25.5</text>
             <!-- 범례 -->
-            <line x1="56" y1="168" x2="72" y2="168" stroke="#6B7280" stroke-width="2"/>
-            <text x="75" y="171" font-size="8" fill="#374151">차입금의존도</text>
-            <line x1="140" y1="168" x2="156" y2="168" stroke="#2563EB" stroke-width="2" stroke-dasharray="4,2"/>
-            <text x="159" y="171" font-size="8" fill="#374151">유동비율</text>
+            <line x1="56" y1="165" x2="72" y2="165" stroke="#6B7280" stroke-width="2.5"/>
+            <text x="75" y="168" font-size="8" fill="#374151">차입금의존도 (좌)</text>
+            <line x1="172" y1="165" x2="188" y2="165" stroke="#2563EB" stroke-width="2" stroke-dasharray="4,2"/>
+            <text x="191" y="168" font-size="8" fill="#374151">유동비율 (우)</text>
           </svg>
           <div style="font-size:11px;color:#DC2626;font-weight:700;text-align:center;margin-top:4px;">'24.11월 급격한 악화 국면으로 전환된 것으로 판단됨</div>
         </div>
