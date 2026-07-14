@@ -386,15 +386,21 @@ h1.hero-title .sub {
 }
 .prem-card.loss .corner-tag { background: var(--red-light); color: var(--red); border: 1px solid var(--red-mid); }
 .prem-card.gain .corner-tag { background: var(--green-light); color: var(--green); border: 1px solid var(--green-mid); }
-.prem-card h3 { font-size: 13px; font-weight: 600; margin-bottom: 16px; color: var(--ink2); }
+.prem-card h3 { font-family: var(--sans); font-size: 14px; font-weight: 700; margin-bottom: 16px; color: var(--ink2); letter-spacing: -0.2px; }
 .prem-card .big-n {
-  font-family: var(--mono); font-size: 52px; font-weight: 700;
+  font-family: var(--sans); font-size: 56px; font-weight: 900;
   letter-spacing: -2px; line-height: 1;
 }
 .prem-card.loss .big-n { color: var(--red); }
 .prem-card.gain .big-n { color: var(--green); }
-.prem-card .unit { font-size: 18px; color: var(--ink3); font-weight: 500; }
-.prem-card .note { font-size: 12.5px; color: var(--ink3); margin-top: 14px; line-height: 1.65; }
+.prem-card .unit {
+  font-family: var(--sans); font-size: 22px; font-weight: 700;
+  color: var(--ink2); letter-spacing: -0.5px;
+}
+.prem-card .note {
+  font-family: var(--sans); font-size: 13px; color: var(--ink3);
+  margin-top: 14px; line-height: 1.75; font-weight: 400;
+}
 .prem-eq {
   display: flex; align-items: center; justify-content: center;
   gap: 16px; margin-top: 28px; flex-wrap: wrap;
