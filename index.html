@@ -2440,36 +2440,143 @@ document.addEventListener('keydown', function(e) {
 <section id="signals">
   <div class="wrap">
     <div class="sec-label reveal"><span class="sec-num">03</span>결산이 놓치는 것</div>
-    <h2 class="sh reveal d1">무너지는 과정은<br><span class="hl">월 단위로만</span> 보입니다.</h2>
-    <p class="lead-text reveal d2">부도 차주의 월별 재무를 펼쳐보면, 자기자본과 영업이익이 부도 수개월 전부터 꺾이는 패턴이 반복됩니다. 연 1회 결산으로는 이 기울기를 볼 수 없습니다.</p>
+    <h2 class="sh reveal d1">무너지는 과정은<br><span class="hl underline-draw">월 단위로만</span> 보입니다.</h2>
+    <p class="lead-text reveal d2">"문제는 위기가 없었던 것이 아니라, 위기를 알 수 없었다는 점입니다." — 투자 이후에도 기업의 재무·현금흐름 변화는 실시간으로 공유되지 않았고, 위기는 결산 이후에야 명확히 확인되었습니다.</p>
 
-    <div class="signals-grid">
-      <div class="sig-chart-wrap reveal d2">
-        <div class="vt">부도 차주 · 영업이익 & 자본잠식 추이 (익명 패턴)</div>
-        <div class="vs">부도 발생 24개월 전 → 부도 시점</div>
-        <svg viewBox="0 0 420 200" width="100%" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="420" height="200" fill="#F9FAFB" rx="6"/>
-          <line x1="20" y1="100" x2="400" y2="100" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,3"/>
-          <text x="24" y="95" fill="#9CA3AF" font-size="10" font-family="IBM Plex Mono">손익분기</text>
-          <path d="M20,72 L50,66 L80,78 L110,62 L140,82 L170,76 L200,98 L230,91 L260,116 L290,108 L320,138 L350,128 L380,162"
-                fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-          <circle cx="380" cy="162" r="5" fill="#DC2626"/>
-          <text x="380" y="180" fill="#DC2626" font-size="10" font-family="IBM Plex Mono" text-anchor="middle">부도</text>
-          <!-- 결산 포착 시점 표시 -->
-          <line x1="220" y1="15" x2="220" y2="105" stroke="#D97706" stroke-width="1" stroke-dasharray="3,3"/>
-          <text x="224" y="24" fill="#D97706" font-size="9.5" font-family="IBM Plex Mono" font-weight="600">결산 포착 시점</text>
-          <text x="24" y="62" fill="#059669" font-size="9.5" font-family="IBM Plex Mono">월별 조기경보 가능 →</text>
-          <text x="20" y="194" fill="#9CA3AF" font-size="10" font-family="IBM Plex Mono">M-24</text>
-          <text x="370" y="194" fill="#9CA3AF" font-size="10" font-family="IBM Plex Mono">부도</text>
-        </svg>
-        <div style="font-size:12px;color:var(--ink3);margin-top:12px;line-height:1.65">결산만 보면 연말 한 점만 찍혀 이 기울기가 사라집니다. 월별 데이터는 이 과정 전체를 드러냅니다.</div>
+    <!-- 정육각 타임라인 -->
+    <div class="reveal d2" style="margin-top:36px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+        <div style="background:#1B3A5C;color:#fff;font-size:11px;font-weight:800;padding:4px 12px;border-radius:4px;letter-spacing:0.5px;">실제 사례</div>
+        <div style="font-size:15px;font-weight:800;color:var(--ink);">㈜정○각 — 기업 붕괴는 이미 15개월 전부터 예고되어 있었습니다</div>
       </div>
-      <div class="sig-items reveal d3">
-        <div class="si"><div class="ic r">↓</div><div><div class="tt">자기자본 잠식 진행</div><div class="dd">부도 차주 상당수가 부도 전 수개월간 자기자본이 줄거나 마이너스로 전환. 결산 시점엔 이미 늦습니다.</div></div></div>
-        <div class="si"><div class="ic a">~</div><div><div class="tt">매출 변동성 급증</div><div class="dd">월별 매출이 들쭉날쭉해지며 현금흐름 불안정. 거래처 이탈·집중도 변화가 선행 신호로 나타납니다.</div></div></div>
-        <div class="si"><div class="ic a">⚡</div><div><div class="tt">전력비·원재료비 이상</div><div class="dd">가동률을 반영하는 미시 지표가 결산보다 먼저 움직입니다. CPS 491개 변수가 이를 포착합니다.</div></div></div>
-        <div class="si"><div class="ic r">💸</div><div><div class="tt">대표자 가지급금 급증</div><div class="dd">결산 이전 가지급금 잔액·발생 횟수는 자금 유용의 선행 신호입니다. 기존 CB는 이 데이터가 없습니다.</div></div></div>
-        <div class="si"><div class="ic g">✓</div><div><div class="tt">조기 대응 시간 확보</div><div class="dd">한도 축소·담보 보강·회수 착수 — 월별 추적이 있어야 의사결정에 쓸 시간이 생깁니다.</div></div></div>
+
+      <!-- 타임라인 -->
+      <div style="background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);">
+        <!-- 타임라인 헤더 -->
+        <div style="background:linear-gradient(135deg,#1B3A5C 0%,#2563EB 100%);padding:16px 24px;">
+          <div style="font-size:12px;color:rgba(255,255,255,0.65);margin-bottom:4px;">정○각 기업운영 Timeline</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:13px;color:#fff;font-weight:700;">'16년 설립 → '22~'23년 외형확장 → '24년 완전자본잠식 → '25년 7월 회생신청</div>
+            <div style="background:rgba(220,38,38,0.9);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;">⚠ 회생신청 '25.07</div>
+          </div>
+        </div>
+
+        <!-- 타임라인 스텝 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;">
+          <!-- 연결선 -->
+          <div style="position:absolute;top:36px;left:10%;right:10%;height:2px;background:linear-gradient(to right,#059669,#D97706,#D97706,#DC2626,#DC2626);z-index:0;"></div>
+
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#059669;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(5,150,105,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#059669;margin-bottom:4px;">'16~'21년</div>
+            <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:4px;">외형 성장</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">투자 유치 통해<br>무리한 외형 확장</div>
+          </div>
+
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#D97706;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(217,119,6,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#D97706;margin-bottom:4px;">'22~'23년</div>
+            <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:4px;">무리한 M&A</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">대규모 기업인수<br>차입성 자금 확대</div>
+          </div>
+
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#D97706;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(217,119,6,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#D97706;margin-bottom:4px;">'24년 3~4월</div>
+            <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:4px;">완전자본잠식</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">브릿지론 370억<br>운영자금 100억</div>
+          </div>
+
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#DC2626;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(220,38,38,0.2);"></div>
+            <div style="font-size:10px;font-weight:800;color:#DC2626;margin-bottom:4px;">'24년 11~12월</div>
+            <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:4px;">현금잔액 최저</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">부채비율 급상승<br>유동성 임계점</div>
+          </div>
+
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="width:16px;height:16px;border-radius:50%;background:#DC2626;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 0 0 4px rgba(220,38,38,0.25);"></div>
+            <div style="font-size:10px;font-weight:800;color:#DC2626;margin-bottom:4px;">'25년 7월</div>
+            <div style="font-size:11px;font-weight:700;color:#DC2626;margin-bottom:4px;">기업회생 신청</div>
+            <div style="font-size:10px;color:var(--ink3);line-height:1.5;">VC 누적 1,200억<br>손실 불가피</div>
+          </div>
+        </div>
+
+        <!-- 조기경보 포인트 -->
+        <div style="margin:0 24px 20px;padding:14px 16px;background:linear-gradient(135deg,#EFF6FF,#F0FDF4);border:1px solid #BFDBFE;border-radius:10px;display:flex;align-items:flex-start;gap:12px;">
+          <div style="font-size:20px;flex-shrink:0;">🔍</div>
+          <div>
+            <div style="font-size:12px;font-weight:800;color:#1B3A5C;margin-bottom:4px;">당사 플랫폼 사용 시 선제적 포착 가능 시점</div>
+            <div style="font-size:12px;color:#374151;line-height:1.7;">'24년 3월 <strong>완전자본잠식 발생 시점</strong>부터 월별 자본총계·현금잔액 급락이 크레디뷰에 실시간 반영됩니다. 결산을 기다릴 필요 없이 <strong>최소 15개월 전</strong> 이상징후를 포착하고 선제 대응이 가능합니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 월별 재무 지표 -->
+    <div class="signals-grid reveal d3" style="margin-top:28px;">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);">
+        <div style="padding:14px 16px;border-bottom:1px solid var(--border);">
+          <div style="font-size:11px;font-weight:700;color:var(--ink3);margin-bottom:2px;">월별 재무제표 · 자본총계 & 현금</div>
+          <div style="font-size:13px;font-weight:800;color:var(--ink);">'24.3월 완전자본잠식 → 이후 급격 악화</div>
+        </div>
+        <div style="padding:16px;">
+          <svg viewBox="0 0 380 160" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,-apple-system,sans-serif">
+            <!-- Y축 기준선 -->
+            <line x1="40" y1="10" x2="40" y2="130" stroke="#E5E7EB" stroke-width="1"/>
+            <line x1="40" y1="70" x2="370" y2="70" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="36" y="74" text-anchor="end" font-size="9" fill="#9CA3AF">0</text>
+            <text x="36" y="20" text-anchor="end" font-size="9" fill="#9CA3AF">+</text>
+            <text x="36" y="128" text-anchor="end" font-size="9" fill="#DC2626">-</text>
+            <!-- 자본총계 라인 (위에서 아래로 급락) -->
+            <polyline points="50,52 70,65 90,78 110,92 130,105 150,112 170,118 190,122 210,125 230,128 250,130 270,130 290,130 310,130 330,130"
+              fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- 완전자본잠식 표시 -->
+            <line x1="90" y1="10" x2="90" y2="130" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+            <text x="92" y="20" font-size="9" font-weight="700" fill="#DC2626">완전자본잠식</text>
+            <text x="92" y="30" font-size="8" fill="#DC2626">'24.4월</text>
+            <!-- 현금 라인 -->
+            <polyline points="50,60 70,62 90,64 110,68 130,66 150,69 170,71 190,70 210,72 230,74 250,80 270,78 290,75 310,72 330,68"
+              fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5,3"/>
+            <!-- X축 레이블 -->
+            <text x="50" y="145" text-anchor="middle" font-size="8" fill="#9CA3AF">'24.3</text>
+            <text x="130" y="145" text-anchor="middle" font-size="8" fill="#9CA3AF">'24.7</text>
+            <text x="210" y="145" text-anchor="middle" font-size="8" fill="#9CA3AF">'24.11</text>
+            <text x="290" y="145" text-anchor="middle" font-size="8" fill="#9CA3AF">'25.3</text>
+            <text x="330" y="145" text-anchor="middle" font-size="8" fill="#9CA3AF">'25.5</text>
+            <!-- 범례 -->
+            <line x1="44" y1="155" x2="64" y2="155" stroke="#DC2626" stroke-width="2"/>
+            <text x="68" y="158" font-size="9" fill="#374151">자본총계</text>
+            <line x1="120" y1="155" x2="140" y2="155" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4,2"/>
+            <text x="144" y="158" font-size="9" fill="#374151">현금</text>
+          </svg>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.6;margin-top:8px;">'24.4월 완전자본잠식 전환 후 자본총계 지속 감소. 결산 데이터로는 연말에야 파악 가능하나, 월별 데이터로 전 과정이 포착됩니다.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:10px;padding:14px 16px;">
+          <div style="font-size:11px;font-weight:800;color:#DC2626;margin-bottom:6px;">📉 차입금의존도 — 결산 전 이미 80% 초과</div>
+          <div style="font-size:12px;color:#374151;line-height:1.7;">'24.3월 기준 차입금의존도 <strong>80.5%</strong>로 극도로 높은 수준. 이후에도 지속 상승하여 '25.1월 <strong>93.7%</strong>까지 악화. 결산 전 월별 데이터로만 추적 가능한 수치입니다.</div>
+        </div>
+
+        <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:10px;padding:14px 16px;">
+          <div style="font-size:11px;font-weight:800;color:#DC2626;margin-bottom:6px;">💧 런웨이 — '24년 하반기 이미 0 수준</div>
+          <div style="font-size:12px;color:#374151;line-height:1.7;">'24년 6월경부터 현금 지출 지속으로 유동성 저하 신호 포착. '24.12월 현금보유액 최저치 도달. <strong>런웨이 0</strong>에 진입한 시점을 월별로 확인·경보 가능합니다.</div>
+        </div>
+
+        <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:14px 16px;">
+          <div style="font-size:11px;font-weight:800;color:#1B3A5C;margin-bottom:6px;">✅ 크레디뷰로 가능한 것</div>
+          <div style="font-size:12px;color:#374151;line-height:1.7;">월별 자본총계·현금잔액·차입금의존도·유동비율을 실시간 추적. 이상징후 발생 시 <strong>즉시 알람</strong>. 결산을 기다리지 않고 <strong>최소 15개월 전</strong> 선제 대응 가능합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal d3" style="margin-top:20px;padding:16px 20px;background:var(--navy);border-radius:10px;display:flex;align-items:center;gap:16px;">
+      <div style="font-size:28px;flex-shrink:0;">💡</div>
+      <div>
+        <div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:4px;">연 단위 결산 정보의 공백기 동안 발생하는 수많은 변수들</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.75);line-height:1.7;">월 단위 실시간 데이터 기반의 기업 모니터링은 선제적 리스크 관리를 위한 확실한 대안입니다. 정○각 사례처럼 이미 데이터는 경고하고 있었습니다.</div>
       </div>
     </div>
   </div>
