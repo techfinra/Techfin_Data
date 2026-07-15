@@ -1547,11 +1547,11 @@ footer {
         <div style="font-size:11px;color:#374151;line-height:1.7;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
             <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 재무제표 (BS/PL/CF)</span>
-            <button onclick="openOutputModal('finance')" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;">상세보기</button>
+            <button data-modal="finance" class="output-modal-btn" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;">상세보기</button>
           </div>
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
             <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 부가세</span>
-            <button onclick="openOutputModal('vat')" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;">상세보기</button>
+            <button data-modal="vat" class="output-modal-btn" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;">상세보기</button>
           </div>
           <div>• 신용평가 & 리스크 분석</div>
           <div>• 기업 종합 분석 리포트</div>
@@ -3777,7 +3777,7 @@ function switchTab(name) {
 
 
 <!-- ═══ 월별 부가세 팝업 ═══ -->
-<div id="modal-vat" onclick="closeOutputModal('vat')" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;padding:16px;">
+<div id="modal-vat" class="output-modal-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;padding:16px;">
   <div onclick="event.stopPropagation()" style="background:#fff;border-radius:16px;width:100%;max-width:920px;max-height:92vh;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,0.4);overflow:hidden;">
     <div style="background:linear-gradient(135deg,#1B3A5C,#2563EB);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
       <div>
@@ -3785,7 +3785,7 @@ function switchTab(name) {
         <div style="font-size:16px;font-weight:800;color:#fff;">월별 부가세 데이터 테이블</div>
         <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px;">월별 매출·매입, 매출채권·매입채무 등 기업의 실제 영업활동과 거래흐름을 적시에 파악</div>
       </div>
-      <span onclick="closeOutputModal('vat')" style="color:rgba(255,255,255,0.7);font-size:24px;cursor:pointer;">✕</span>
+      <span data-close="vat" class="output-modal-close" style="color:rgba(255,255,255,0.7);font-size:24px;cursor:pointer;">✕</span>
     </div>
     <div style="overflow-y:auto;flex:1;padding:24px;">
       <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:13px;color:#1E40AF;line-height:1.7;">
@@ -3815,13 +3815,13 @@ function switchTab(name) {
       </div>
     </div>
     <div style="padding:12px 24px;background:#F8FAFC;border-top:1px solid #E2E8F0;display:flex;justify-content:flex-end;flex-shrink:0;">
-      <span onclick="closeOutputModal('vat')" style="font-size:12px;font-weight:700;color:#1B3A5C;cursor:pointer;padding:6px 14px;border:1px solid #CBD5E1;border-radius:6px;">닫기 ✕</span>
+      <span data-close="vat" class="output-modal-close" style="font-size:12px;font-weight:700;color:#1B3A5C;cursor:pointer;padding:6px 14px;border:1px solid #CBD5E1;border-radius:6px;">닫기 ✕</span>
     </div>
   </div>
 </div>
 
 <!-- ═══ 월별 재무제표 팝업 ═══ -->
-<div id="modal-finance" onclick="closeOutputModal('finance')" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;padding:16px;">
+<div id="modal-finance" class="output-modal-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;padding:16px;">
   <div onclick="event.stopPropagation()" style="background:#fff;border-radius:16px;width:100%;max-width:860px;max-height:92vh;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,0.4);overflow:hidden;">
     <div style="background:linear-gradient(135deg,#1B3A5C,#2563EB);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
       <div>
@@ -3829,7 +3829,7 @@ function switchTab(name) {
         <div style="font-size:16px;font-weight:800;color:#fff;">월별 재무제표</div>
         <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px;">매출·매입 정보 및 계정과목별 분개정보 기반 → 월별 재무제표 생성·제공</div>
       </div>
-      <span onclick="closeOutputModal('finance')" style="color:rgba(255,255,255,0.7);font-size:24px;cursor:pointer;">✕</span>
+      <span data-close="finance" class="output-modal-close" style="color:rgba(255,255,255,0.7);font-size:24px;cursor:pointer;">✕</span>
     </div>
     <div style="overflow-y:auto;flex:1;padding:24px;">
       <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:13px;color:#1E40AF;line-height:1.7;">
@@ -3899,20 +3899,47 @@ function switchTab(name) {
       </div>
     </div>
     <div style="padding:12px 24px;background:#F8FAFC;border-top:1px solid #E2E8F0;display:flex;justify-content:flex-end;flex-shrink:0;">
-      <span onclick="closeOutputModal('finance')" style="font-size:12px;font-weight:700;color:#1B3A5C;cursor:pointer;padding:6px 14px;border:1px solid #CBD5E1;border-radius:6px;">닫기 ✕</span>
+      <span data-close="finance" class="output-modal-close" style="font-size:12px;font-weight:700;color:#1B3A5C;cursor:pointer;padding:6px 14px;border:1px solid #CBD5E1;border-radius:6px;">닫기 ✕</span>
     </div>
   </div>
 </div>
 
 <script>
-function openOutputModal(type) {
-  document.getElementById('modal-' + type).style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeOutputModal(type) {
-  document.getElementById('modal-' + type).style.display = 'none';
-  document.body.style.overflow = '';
-}
+document.addEventListener('DOMContentLoaded', function() {
+  // 열기 버튼
+  document.querySelectorAll('.output-modal-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var type = this.getAttribute('data-modal');
+      var modal = document.getElementById('modal-' + type);
+      if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+    });
+  });
+  // 닫기 버튼
+  document.querySelectorAll('.output-modal-close').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var type = this.getAttribute('data-close');
+      var modal = document.getElementById('modal-' + type);
+      if (modal) { modal.style.display = 'none'; document.body.style.overflow = ''; }
+    });
+  });
+  // 오버레이 클릭 닫기
+  document.querySelectorAll('.output-modal-overlay').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === this) { this.style.display = 'none'; document.body.style.overflow = ''; }
+    });
+  });
+  // ESC 닫기
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.output-modal-overlay').forEach(function(m) {
+        m.style.display = 'none';
+      });
+      document.body.style.overflow = '';
+    }
+  });
+});
 </script>
 </body>
 </html>
