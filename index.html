@@ -1306,6 +1306,7 @@ footer {
 <div id="side-nav">
   <a class="sn-item" href="#company-intro" onclick="scrollTo_(event,'company-intro')"><div class="sn-dot"></div><div class="sn-label">회사 소개</div></a>
   <a class="sn-item" href="#data-advantage" onclick="scrollTo_(event,'data-advantage')"><div class="sn-dot"></div><div class="sn-label">데이터 강점</div></a>
+  <a class="sn-item" href="#data-process" onclick="scrollTo_(event,'data-process')"><div class="sn-dot"></div><div class="sn-label">데이터 흐름</div></a>
   <a class="sn-item" href="#grade" onclick="scrollTo_(event,'grade')"><div class="sn-dot"></div><div class="sn-label"><b>01</b> 변별력</div></a>
   <a class="sn-item" href="#coverage" onclick="scrollTo_(event,'coverage')"><div class="sn-dot"></div><div class="sn-label"><b>02</b> 커버리지</div></a>
   <a class="sn-item" href="#premise" onclick="scrollTo_(event,'premise')"><div class="sn-dot"></div><div class="sn-label"><b>03</b> 출발점</div></a>
@@ -1518,6 +1519,84 @@ footer {
 
   </div>
 </section>
+
+<section id="data-process" style="background:var(--bg);padding:80px 0;border-top:1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="sec-num">—</span>데이터 흐름</div>
+    <h2 class="sh reveal d1">위하고 기장 데이터가<br><span class="hl">테크핀레이팅스 플랫폼으로</span> 제공되는 프로세스</h2>
+    <p class="lead-text reveal d2">더존비즈온의 회계 프로그램 위하고(WEHAGO)에서 기장된 데이터가 더존비즈온 DB에 누적되고, 동의 기반으로 테크핀레이팅스 DB에 전달되어 금융기관에 플랫폼·서비스로 제공됩니다.</p>
+
+    <!-- 5단계 흐름 요약 -->
+    <div class="reveal d2" style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:36px;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);">
+      <div style="padding:16px 14px;text-align:center;border-right:1px solid var(--border);background:#F8FAFC;">
+        <div style="font-size:18px;margin-bottom:6px;">📝</div>
+        <div style="font-size:11px;font-weight:800;color:#374151;margin-bottom:4px;">1. 기장</div>
+        <div style="font-size:10px;color:#6B7280;line-height:1.5;">위하고(WEHAGO)<br>직접·간접 기장</div>
+      </div>
+      <div style="padding:16px 14px;text-align:center;border-right:1px solid var(--border);background:#F8FAFC;">
+        <div style="font-size:18px;margin-bottom:6px;">🗄️</div>
+        <div style="font-size:11px;font-weight:800;color:#374151;margin-bottom:4px;">2. DB 누적</div>
+        <div style="font-size:10px;color:#6B7280;line-height:1.5;">더존비즈온 DB<br>클라우드 안전 보관</div>
+      </div>
+      <div style="padding:16px 14px;text-align:center;border-right:1px solid var(--border);background:#EFF6FF;">
+        <div style="font-size:18px;margin-bottom:6px;">✅</div>
+        <div style="font-size:11px;font-weight:800;color:#2563EB;margin-bottom:4px;">3. 동의 기반 제공</div>
+        <div style="font-size:10px;color:#6B7280;line-height:1.5;">정보주체 동의 확보<br>금융기관 요청 시</div>
+      </div>
+      <div style="padding:16px 14px;text-align:center;border-right:1px solid var(--border);background:#EFF6FF;">
+        <div style="font-size:18px;margin-bottom:6px;">⚡</div>
+        <div style="font-size:11px;font-weight:800;color:#1B3A5C;margin-bottom:4px;">4. 테크핀 DB</div>
+        <div style="font-size:10px;color:#6B7280;line-height:1.5;">기장 데이터 가공·분석<br>가치 있는 정보로 재탄생</div>
+      </div>
+      <div style="padding:16px 14px;text-align:center;background:#EFF6FF;">
+        <div style="font-size:18px;margin-bottom:6px;">🚀</div>
+        <div style="font-size:11px;font-weight:800;color:#059669;margin-bottom:4px;">5. 플랫폼 제공</div>
+        <div style="font-size:10px;color:#6B7280;line-height:1.5;">기업모니터링<br>기업DB조회 서비스</div>
+      </div>
+    </div>
+
+    <!-- 프로세스 상세 이미지 -->
+    <div class="reveal d3" style="margin-top:24px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--border);cursor:zoom-in;" onclick="openLightbox(this.querySelector('img'),'위하고 기장 데이터가 테크핀레이팅스 플랫폼으로 제공되는 프로세스')">
+      <img src="img/data_process.png" alt="위하고 기장 데이터 → 테크핀레이팅스 플랫폼 제공 프로세스" style="width:100%;display:block;"/>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--ink3);text-align:center;">이미지를 클릭하면 크게 볼 수 있습니다 🔍</div>
+
+    <!-- 동의 법적 근거 요약 -->
+    <div class="reveal d3" style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:800;color:#1B3A5C;margin-bottom:6px;">🔒 데이터 보안 및 관리</div>
+        <div style="font-size:11px;color:#374151;line-height:1.7;">
+          <div>• 클라우드 기반 보안 저장</div>
+          <div>• 접근 권한 통제</div>
+          <div>• 데이터 무결성 관리</div>
+        </div>
+      </div>
+      <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:800;color:#2563EB;margin-bottom:6px;">📋 주요 산출물</div>
+        <div style="font-size:11px;color:#374151;line-height:1.7;">
+          <div>• 월별 재무제표 (BS/PL/CF)</div>
+          <div>• 부가세 신고/분석</div>
+          <div>• 신용평가 & 리스크 분석</div>
+          <div>• 기업 종합 분석 리포트</div>
+        </div>
+      </div>
+      <div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:800;color:#059669;margin-bottom:6px;">🏦 제공 서비스</div>
+        <div style="font-size:11px;color:#374151;line-height:1.7;">
+          <div>• 기업모니터링 (EWS·런웨이)</div>
+          <div>• 기업DB조회 서비스</div>
+          <div>• 여신 심사 지원</div>
+          <div>• 포트폴리오 분석</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal d3" style="margin-top:16px;padding:14px 20px;background:var(--navy);border-radius:10px;text-align:center;">
+      <div style="font-size:13px;font-weight:700;color:#fff;">🛡️ 동의 기반의 안전한 데이터 활용으로, 더 정확한 기업 분석과 금융의사결정을 지원합니다.</div>
+    </div>
+  </div>
+</section>
+
 
 <section id="transition-bridge" style="background:var(--navy);padding:80px 0;">
   <div class="wrap" style="text-align:center;">
@@ -2780,7 +2859,7 @@ footer {
 // 1. 사이드 네비 스크롤 감지
 // ══════════════════════════════════════
 const sideNav = document.getElementById('side-nav');
-const snSections = ['company-intro','data-advantage','grade','coverage','premise','casestudy','uniqueness','products','signals','credit-rating','network-model','growth-rating','qa','refs','timing','cta'];
+const snSections = ['company-intro','data-advantage','data-process','grade','coverage','premise','casestudy','uniqueness','products','signals','credit-rating','network-model','growth-rating','qa','refs','timing','cta'];
 const snItems = document.querySelectorAll('.sn-item');
 
 function scrollTo_(e, id) {
@@ -3256,7 +3335,7 @@ document.addEventListener('keydown', function(e) {
 // 1. 사이드 네비 스크롤 감지
 // ══════════════════════════════════════
 const sideNav = document.getElementById('side-nav');
-const snSections = ['company-intro','data-advantage','grade','coverage','premise','casestudy','uniqueness','products','signals','credit-rating','network-model','growth-rating','qa','refs','timing','cta'];
+const snSections = ['company-intro','data-advantage','data-process','grade','coverage','premise','casestudy','uniqueness','products','signals','credit-rating','network-model','growth-rating','qa','refs','timing','cta'];
 const snItems = document.querySelectorAll('.sn-item');
 
 function scrollTo_(e, id) {
