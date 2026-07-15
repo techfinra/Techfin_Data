@@ -1547,11 +1547,11 @@ footer {
         <div style="font-size:11px;color:#374151;line-height:1.7;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
             <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 재무제표 (BS/PL/CF)</span>
-            <button data-modal="finance" class="output-modal-btn" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;">상세보기</button>
+            <a id="btn-finance" href="javascript:void(0)" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;text-decoration:none;display:inline-block;">상세보기</a>
           </div>
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
             <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 부가세</span>
-            <button data-modal="vat" class="output-modal-btn" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;">상세보기</button>
+            <a id="btn-vat" href="javascript:void(0)" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;text-decoration:none;display:inline-block;">상세보기</a>
           </div>
           <div>• 신용평가 & 리스크 분석</div>
           <div>• 기업 종합 분석 리포트</div>
@@ -3905,41 +3905,45 @@ function switchTab(name) {
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // 열기 버튼
-  document.querySelectorAll('.output-modal-btn').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
+(function() {
+  function bindBtn(id, modalId) {
+    var el = document.getElementById(id);
+    var modal = document.getElementById(modalId);
+    if (!el || !modal) return;
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
       e.stopPropagation();
-      var type = this.getAttribute('data-modal');
-      var modal = document.getElementById('modal-' + type);
-      if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     });
-  });
-  // 닫기 버튼
-  document.querySelectorAll('.output-modal-close').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      var type = this.getAttribute('data-close');
-      var modal = document.getElementById('modal-' + type);
-      if (modal) { modal.style.display = 'none'; document.body.style.overflow = ''; }
-    });
-  });
-  // 오버레이 클릭 닫기
-  document.querySelectorAll('.output-modal-overlay').forEach(function(overlay) {
-    overlay.addEventListener('click', function(e) {
+  }
+  function bindClose(modalId) {
+    var modal = document.getElementById(modalId);
+    if (!modal) return;
+    modal.addEventListener('click', function(e) {
       if (e.target === this) { this.style.display = 'none'; document.body.style.overflow = ''; }
     });
-  });
-  // ESC 닫기
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.output-modal-overlay').forEach(function(m) {
-        m.style.display = 'none';
+  }
+  function init() {
+    bindBtn('btn-finance', 'modal-finance');
+    bindBtn('btn-vat', 'modal-vat');
+    bindClose('modal-finance');
+    bindClose('modal-vat');
+    document.querySelectorAll('.output-modal-close').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var id = this.getAttribute('data-close');
+        var m = document.getElementById('modal-' + id);
+        if (m) { m.style.display = 'none'; document.body.style.overflow = ''; }
       });
-      document.body.style.overflow = '';
-    }
-  });
-});
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 </script>
 </body>
 </html>
