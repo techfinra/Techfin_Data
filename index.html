@@ -612,7 +612,7 @@ h1.hero-title .sub {
 .framing-box .fb-body p { font-size: 13px; color: var(--ink2); line-height: 1.7; }
 
 /* ─── §7 UNIQUENESS ─── */
-#uniqueness { background: var(--bg2); }
+#uniqueness { background: var(--bg); }
 .compare-wrap { margin-top: 48px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
 .compare-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
 .uc { background: var(--bg2); }
@@ -715,7 +715,7 @@ h1.hero-title .sub {
 .rchip.assoc { background: var(--bg3); color: var(--ink2); font-size: 12.5px; }
 
 /* ─── §11 TIMING ─── */
-#timing { background: var(--bg2); }
+#timing { background: var(--bg); }
 .timeline { margin-top: 48px; position: relative; }
 .tl-item { display: grid; grid-template-columns: 130px 1fr; gap: 28px; margin-bottom: 28px; position: relative; }
 .tl-item::before {
@@ -1306,18 +1306,19 @@ footer {
 <div id="side-nav">
   <a class="sn-item" href="#company-intro" onclick="scrollTo_(event,'company-intro')"><div class="sn-dot"></div><div class="sn-label">회사 소개</div></a>
   <a class="sn-item" href="#data-advantage" onclick="scrollTo_(event,'data-advantage')"><div class="sn-dot"></div><div class="sn-label">데이터 강점</div></a>
-  <a class="sn-item" href="#premise" onclick="scrollTo_(event,'premise')"><div class="sn-dot"></div><div class="sn-label"><b>01</b> 출발점</div></a>
+  <a class="sn-item" href="#grade" onclick="scrollTo_(event,'grade')"><div class="sn-dot"></div><div class="sn-label"><b>01</b> 변별력</div></a>
   <a class="sn-item" href="#coverage" onclick="scrollTo_(event,'coverage')"><div class="sn-dot"></div><div class="sn-label"><b>02</b> 커버리지</div></a>
-  <a class="sn-item" href="#grade" onclick="scrollTo_(event,'grade')"><div class="sn-dot"></div><div class="sn-label"><b>03</b> 변별력</div></a>
-  <a class="sn-item" href="#signals" onclick="scrollTo_(event,'signals')"><div class="sn-dot"></div><div class="sn-label"><b>04</b> 정육각 사례</div></a>
-  <a class="sn-item" href="#products" onclick="scrollTo_(event,'products')"><div class="sn-dot"></div><div class="sn-label"><b>05</b> 데이터 상품</div></a>
-  <a class="sn-item" href="#credit-rating" onclick="scrollTo_(event,'credit-rating')"><div class="sn-dot"></div><div class="sn-label"><b>06</b> 신용평가</div></a>
-  <a class="sn-item" href="#network-model" onclick="scrollTo_(event,'network-model')"><div class="sn-dot"></div><div class="sn-label"><b>07</b> 관계망</div></a>
-  <a class="sn-item" href="#growth-rating" onclick="scrollTo_(event,'growth-rating')"><div class="sn-dot"></div><div class="sn-label"><b>08</b> 성장평가</div></a>
-  <a class="sn-item" href="#casestudy" onclick="scrollTo_(event,'casestudy')"><div class="sn-dot"></div><div class="sn-label"><b>09</b> 동의서</div></a>
-  <a class="sn-item" href="#uniqueness" onclick="scrollTo_(event,'uniqueness')"><div class="sn-dot"></div><div class="sn-label"><b>10</b> 고유성</div></a>
+  <a class="sn-item" href="#premise" onclick="scrollTo_(event,'premise')"><div class="sn-dot"></div><div class="sn-label"><b>03</b> 출발점</div></a>
+  <a class="sn-item" href="#casestudy" onclick="scrollTo_(event,'casestudy')"><div class="sn-dot"></div><div class="sn-label"><b>04</b> 동의서</div></a>
+  <a class="sn-item" href="#uniqueness" onclick="scrollTo_(event,'uniqueness')"><div class="sn-dot"></div><div class="sn-label"><b>05</b> 고유성</div></a>
+  <a class="sn-item" href="#products" onclick="scrollTo_(event,'products')"><div class="sn-dot"></div><div class="sn-label"><b>06</b> 데이터 상품</div></a>
+  <a class="sn-item" href="#signals" onclick="scrollTo_(event,'signals')"><div class="sn-dot"></div><div class="sn-label"><b>07</b> 정육각 사례</div></a>
+  <a class="sn-item" href="#credit-rating" onclick="scrollTo_(event,'credit-rating')"><div class="sn-dot"></div><div class="sn-label"><b>08</b> 신용평가</div></a>
+  <a class="sn-item" href="#network-model" onclick="scrollTo_(event,'network-model')"><div class="sn-dot"></div><div class="sn-label"><b>09</b> 관계망</div></a>
+  <a class="sn-item" href="#growth-rating" onclick="scrollTo_(event,'growth-rating')"><div class="sn-dot"></div><div class="sn-label"><b>10</b> 성장평가</div></a>
   <a class="sn-item" href="#qa" onclick="scrollTo_(event,'qa')"><div class="sn-dot"></div><div class="sn-label"><b>11</b> Q&A</div></a>
   <a class="sn-item" href="#refs" onclick="scrollTo_(event,'refs')"><div class="sn-dot"></div><div class="sn-label"><b>12</b> 레퍼런스</div></a>
+  <a class="sn-item" href="#timing" onclick="scrollTo_(event,'timing')"><div class="sn-dot"></div><div class="sn-label"><b>13</b> 왜 지금인가</div></a>
   <a class="sn-item" href="#cta" onclick="scrollTo_(event,'cta')"><div class="sn-dot"></div><div class="sn-label"><b>14</b> 다음 단계</div></a>
 </div>
 
@@ -1339,6 +1340,7 @@ footer {
 </nav>
 
 <!-- ═══ §A 회사소개 ═══ -->
+
 <section id="company-intro">
   <div class="wrap">
     <div class="co-hero">
@@ -1525,65 +1527,10 @@ footer {
     <p style="font-size:15px;color:rgba(255,255,255,0.72);line-height:1.8;max-width:640px;margin:0 auto;">421만 기업의 월별 ERP 원천 데이터가 있습니다. 이 데이터는 연 1회 결산 재무제표가 포착하지 못하는 <strong style="color:#FCD34D;">13개월의 경고 신호</strong>를 실시간으로 드러냅니다. 아래에서 실제 검증 결과를 확인하십시오.</p>
   </div>
 </section>
-<section id="premise">
-  <div class="wrap">
-    <div class="sec-label reveal"><span class="sec-num">01</span>출발점 · 왜 월별 데이터인가</div>
-    <h2 class="sh reveal d1">커버리지가 아니라,<br><span class="hl">막은 부도 한 건</span>의 가치로 보십시오.</h2>
-    <p class="lead-text reveal d2">모든 차주를 덮는 데이터는 없습니다. 중요한 건 범위가 아니라, 덮은 기업 안에서 부실을 미리 잡아내느냐입니다. 은행·캐피탈·보증기관 등 여신 현장에서 부실 한 건의 손실은 데이터 도입 비용 전체를 압도합니다.</p>
-
-    <div class="premise-grid">
-      <div class="prem-card loss reveal d2">
-        <div class="corner-tag">손실 / 부도 1건</div>
-        <h3>법인 여신 부실 1건 실질 손실</h3>
-        <div class="big-n">수억<span class="unit"> 원</span></div>
-        <div class="note">건당 익스포저에 따라 수천만~수억 원. 회수 비용·충당금·기회비용까지 더하면 실질 손실은 명목 금액을 훨씬 상회합니다.</div>
-      </div>
-      <div class="prem-card gain reveal d3">
-        <div class="corner-tag">비용 / 연간</div>
-        <h3>월별 데이터 도입 연간 비용</h3>
-        <div class="big-n">수백<span class="unit"> 만 원</span></div>
-        <div class="note">연 단위 구독 또는 건당 단가. 부실 한 건만 조기에 걸러내는 것으로 충분히 상쇄되는 수준입니다.</div>
-      </div>
-    </div>
-    <div class="prem-eq reveal d3">
-      <div class="etag">부실 <b>1건</b> 차단</div>
-      <div class="op">≫</div>
-      <div class="etag">연간 데이터 비용 <b>전체</b></div>
-    </div>
-    <div class="prem-punch reveal d4">커버리지 논쟁은 여기서 끝납니다.<br><span class="hl">부실 한 건만 막아도, 데이터의 가치는 증명됩니다.</span></div>
-  </div>
-</section>
-
-<section id="coverage">
-  <div class="wrap">
-    <div class="sec-label reveal"><span class="sec-num">02</span>커버리지의 재해석</div>
-    <h2 class="sh reveal d1">덮인 <span class="hl">절반</span>은,<br>기존 데이터가 못 보던 기업들입니다.</h2>
-    <p class="lead-text reveal d2">캐피탈 법인 차주 기준 커버리지는 약 44~45%. "절반밖에"가 아니라, 비외감 중소기업 위주로 기존 CB가 깊이 보지 못하던 영역을 매월 들여다본다는 의미입니다.</p>
-
-    <div class="cov-layout">
-      <div class="reveal d2">
-        <div class="cov-big-num">44.9<span class="pct">%</span></div>
-        <div class="cov-sub">B캐피탈 법인 차주 월재무 커버리지<br>'23~'25 평균 · 계약 시 동의서 편입으로 지속 상승</div>
-      </div>
-      <div class="cov-pts reveal d3">
-        <div class="cov-pt"><div class="h">덮인 기업 = 신호를 볼 수 있는 기업</div><div class="b">앞서 본 부도 13개월 전 신호도 이 커버리지 안에서 잡힌 결과입니다. 덮인 기업에서는 부실을 미리 봅니다.</div></div>
-        <div class="cov-pt"><div class="h">기준월에 따라 달라지는 숫자</div><div class="b">'전체 보유 기준'과 '최신월 기준'은 다릅니다. 누적 보유분까지 보면 더 높습니다. (A캐피탈: 전체 54.6% / 최신월 43.4%)</div></div>
-        <div class="cov-pt"><div class="h">동의서 편입으로 자동 확대</div><div class="b">계약 시 여신 동의서에 테크핀 편입 → 신규 차주부터 데이터 자동 확보. 시간이 지날수록 올라가는 구조입니다.</div></div>
-        <div class="cov-pt"><div class="h">개인사업자 단계적 확대</div><div class="b">현재 법인 중심 제공. 개인사업자 커버리지는 2026년 하반기 서비스 확대 예정. 캐피탈 리테일 차주 접점 확대 기대.</div></div>
-      </div>
-    </div>
-    <div class="cov-table reveal d3">
-      <div class="ct-head"><div>구분</div><div>전체 보유 기준</div><div>최신월 기준</div></div>
-      <div class="ct-row"><div class="lbl">A캐피탈 · 법인</div><div class="val hi">54.6%</div><div class="val">43.4%</div></div>
-      <div class="ct-row"><div class="lbl">B캐피탈 · 법인 (POC)</div><div class="val hi">44.9%</div><div class="val">~45%</div></div>
-      <div class="ct-row"><div class="lbl">개인사업자</div><div class="val" style="color:var(--ink4)">단계적 확대 ('26 하반기)</div><div class="val" style="color:var(--ink4)">—</div></div>
-    </div>
-  </div>
-</section>
 
 <section id="grade">
   <div class="wrap">
-    <div class="sec-label reveal"><span class="sec-num">03</span>변별력 검증</div>
+    <div class="sec-label reveal"><span class="sec-num">01</span>변별력 검증</div>
     <h2 class="sh reveal d1">등급이 나쁠수록,<br><span class="hl underline-draw">부도율이 정확히 올라갑니다.</span></h2>
     <p class="lead-text reveal d2">좋은 신용모형의 조건은 단순합니다. 등급이 낮아질수록 실제 부도율이 단조롭게 상승해야 합니다. B캐피탈 차주에 테크핀 등급을 매겨본 결과입니다.</p>
 
@@ -1617,11 +1564,268 @@ footer {
   </div>
 </section>
 
+<section id="coverage">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="sec-num">02</span>커버리지의 재해석</div>
+    <h2 class="sh reveal d1">덮인 <span class="hl">절반</span>은,<br>기존 데이터가 못 보던 기업들입니다.</h2>
+    <p class="lead-text reveal d2">캐피탈 법인 차주 기준 커버리지는 약 44~45%. "절반밖에"가 아니라, 비외감 중소기업 위주로 기존 CB가 깊이 보지 못하던 영역을 매월 들여다본다는 의미입니다.</p>
+
+    <div class="cov-layout">
+      <div class="reveal d2">
+        <div class="cov-big-num">44.9<span class="pct">%</span></div>
+        <div class="cov-sub">B캐피탈 법인 차주 월재무 커버리지<br>'23~'25 평균 · 계약 시 동의서 편입으로 지속 상승</div>
+      </div>
+      <div class="cov-pts reveal d3">
+        <div class="cov-pt"><div class="h">덮인 기업 = 신호를 볼 수 있는 기업</div><div class="b">앞서 본 부도 13개월 전 신호도 이 커버리지 안에서 잡힌 결과입니다. 덮인 기업에서는 부실을 미리 봅니다.</div></div>
+        <div class="cov-pt"><div class="h">기준월에 따라 달라지는 숫자</div><div class="b">'전체 보유 기준'과 '최신월 기준'은 다릅니다. 누적 보유분까지 보면 더 높습니다. (A캐피탈: 전체 54.6% / 최신월 43.4%)</div></div>
+        <div class="cov-pt"><div class="h">동의서 편입으로 자동 확대</div><div class="b">계약 시 여신 동의서에 테크핀 편입 → 신규 차주부터 데이터 자동 확보. 시간이 지날수록 올라가는 구조입니다.</div></div>
+        <div class="cov-pt"><div class="h">개인사업자 단계적 확대</div><div class="b">현재 법인 중심 제공. 개인사업자 커버리지는 2026년 하반기 서비스 확대 예정. 캐피탈 리테일 차주 접점 확대 기대.</div></div>
+      </div>
+    </div>
+    <div class="cov-table reveal d3">
+      <div class="ct-head"><div>구분</div><div>전체 보유 기준</div><div>최신월 기준</div></div>
+      <div class="ct-row"><div class="lbl">A캐피탈 · 법인</div><div class="val hi">54.6%</div><div class="val">43.4%</div></div>
+      <div class="ct-row"><div class="lbl">B캐피탈 · 법인 (POC)</div><div class="val hi">44.9%</div><div class="val">~45%</div></div>
+      <div class="ct-row"><div class="lbl">개인사업자</div><div class="val" style="color:var(--ink4)">단계적 확대 ('26 하반기)</div><div class="val" style="color:var(--ink4)">—</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="premise">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="sec-num">03</span>출발점 · 왜 월별 데이터인가</div>
+    <h2 class="sh reveal d1">커버리지가 아니라,<br><span class="hl">막은 부도 한 건</span>의 가치로 보십시오.</h2>
+    <p class="lead-text reveal d2">모든 차주를 덮는 데이터는 없습니다. 중요한 건 범위가 아니라, 덮은 기업 안에서 부실을 미리 잡아내느냐입니다. 은행·캐피탈·보증기관 등 여신 현장에서 부실 한 건의 손실은 데이터 도입 비용 전체를 압도합니다.</p>
+
+    <div class="premise-grid">
+      <div class="prem-card loss reveal d2">
+        <div class="corner-tag">손실 / 부도 1건</div>
+        <h3>법인 여신 부실 1건 실질 손실</h3>
+        <div class="big-n">수억<span class="unit"> 원</span></div>
+        <div class="note">건당 익스포저에 따라 수천만~수억 원. 회수 비용·충당금·기회비용까지 더하면 실질 손실은 명목 금액을 훨씬 상회합니다.</div>
+      </div>
+      <div class="prem-card gain reveal d3">
+        <div class="corner-tag">비용 / 연간</div>
+        <h3>월별 데이터 도입 연간 비용</h3>
+        <div class="big-n">수백<span class="unit"> 만 원</span></div>
+        <div class="note">연 단위 구독 또는 건당 단가. 부실 한 건만 조기에 걸러내는 것으로 충분히 상쇄되는 수준입니다.</div>
+      </div>
+    </div>
+    <div class="prem-eq reveal d3">
+      <div class="etag">부실 <b>1건</b> 차단</div>
+      <div class="op">≫</div>
+      <div class="etag">연간 데이터 비용 <b>전체</b></div>
+    </div>
+    <div class="prem-punch reveal d4">커버리지 논쟁은 여기서 끝납니다.<br><span class="hl">부실 한 건만 막아도, 데이터의 가치는 증명됩니다.</span></div>
+  </div>
+</section>
+
+<section id="casestudy">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="sec-num">04</span>동의서 이슈 · 테크핀레이팅스의 현재 대응 방안</div>
+    <h2 class="sh reveal d1">동의서 미확보로 인한 <span class="hl-red">커버리지 공백</span>,<br>테크핀레이팅스는 이렇게 <span class="hl">해결합니다</span></h2>
+    <p class="lead-text reveal d2">더존비즈온 ERP 원천 데이터는 존재하지만, 고객 동의가 확보되지 않은 기업은 제공 대상에서 제외됩니다. 이 구조적 한계를 테크핀레이팅스는 세 가지 방향으로 실질적으로 해소하고 있습니다.</p>
+
+    <div class="case-container reveal d2">
+      <div class="case-header">
+        <div class="cht">
+          <div class="eyebrow">동의서 구조 이해 — 데이터 공백이 아닌 동의 공백</div>
+          <h3>원천 데이터는 있다. 동의가 없을 뿐이다.</h3>
+        </div>
+        <div class="result-pill">● 3가지 해소 방안 운영 중</div>
+      </div>
+
+      <div class="framing-box" style="margin-top:24px;margin-bottom:28px">
+        <div class="fb-icon">📋</div>
+        <div class="fb-body">
+          <h4>동의서 이슈의 본질</h4>
+          <p>더존비즈온 ERP에는 421만 기업의 원천 데이터가 실시간으로 쌓입니다. 그러나 테크핀레이팅스가 이를 금융기관에 제공하려면 해당 기업의 <strong>정보 제공 동의</strong>가 필요합니다. 현재 약 100만 사업자의 동의를 확보한 상태이며, 나머지는 원천에 데이터가 있어도 제공이 불가합니다. 커버리지 숫자(44~45%)는 데이터 부재가 아니라 <strong>동의 미확보에 따른 수치</strong>입니다.</p>
+          <div style="margin-top:10px;padding:10px 14px;background:#F8FAFC;border-left:3px solid #6B7280;border-radius:0 6px 6px 0;font-size:12px;color:#4B5563;line-height:1.7;">
+            <strong style="color:#374151;">📌 동의가 필요한 법적 이유</strong><br>
+            신용정보법상 기업정보는 원칙적으로 정보주체 동의 없이 활용 가능하나, <strong>클라우드법(클라우드컴퓨팅법)</strong>상 클라우드에 저장된 데이터는 기업정보라도 정보주체의 동의가 요구되는 구조입니다. 더존 ERP 데이터가 클라우드 기반으로 수집·저장되는 만큼, 동의 확보분만 제공 가능한 구조가 형성된 것입니다. 테크핀레이팅스는 이 법 상충 문제를 금융위원회에 공식 제기한 바 있으며, 제도 개선을 지속 추진 중입니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="case-body" style="grid-template-columns:1fr;gap:16px">
+        <div class="cm-box">
+          <div class="cm-label">✅ 방안 1 · 여신 동의서에 테크핀 편입</div>
+          <div class="cm-val" style="font-size:18px;font-family:var(--sans);font-weight:800;">계약 시 자동 확대</div>
+          <div class="cm-sub">금융기관과 계약 체결 시 기존 여신 동의서 항목에 테크핀레이팅스 정보 제공 동의를 포함시킵니다. 신규 차주가 여신을 받을 때마다 동의가 자동으로 확보되어 커버리지가 시간이 지날수록 지속 상승하는 구조입니다. 별도 동의 절차 없이 기존 여신 프로세스 안에서 해결됩니다. 현재 신한은행·캐피탈사 등 계약 기관을 통해 신규 차주 동의가 지속 누적되고 있습니다.</div>
+        </div>
+        <div class="cm-box">
+          <div class="cm-label">✅ 방안 2 · 보증기관 협력 통한 개인사업자 동의 확보</div>
+          <div class="cm-val" style="font-size:18px;font-family:var(--sans);font-weight:800;">개인사업자 커버리지 확대 추진</div>
+          <div class="cm-sub">경기신용보증재단 등 보증기관과의 협력을 통해 개인사업자 대상 동의서 확보를 적극 추진 중입니다. 개인사업자 커버리지는 2026년 하반기 서비스 오픈과 함께 본격 확대될 예정입니다.</div>
+        </div>
+        <div class="cm-box">
+          <div class="cm-label">✅ 방안 3 · 코피티션·카드사 협력을 통한 동의 채널 확장</div>
+          <div class="cm-val" style="font-size:18px;font-family:var(--sans);font-weight:800;">파트너십 통한 지속 확대</div>
+          <div class="cm-sub">신한은행과의 공급계약 및 데이터 활용 협력을 기반으로, NICE평가정보·KCB 등 기존 CB사와 MOU·NDA 기반 코피티션을 진행 중입니다. 카드사 등 다양한 금융기관과의 협업을 통해 동의 확보 채널을 지속적으로 확장하고 있으며, 이를 통해 커버리지 이슈는 시간이 지날수록 자연스럽게 해소될 구조입니다.</div>
+        </div>
+      </div>
+
+      <div class="case-outcomes" style="margin-top:24px">
+        <div class="co amber"><div class="co-n">현재 동의 확보</div><div class="co-l">약 100만 사업자<br>동의 기반 보유</div></div>
+        <div class="co blue"><div class="co-n">보증기관·세무사</div><div class="co-l">개인사업자 동의<br>확대 추진 중</div></div>
+        <div class="co green"><div class="co-n">코피티션 확장</div><div class="co-l">신한·NICE·KCB·카드사<br>동의 채널 지속 확대</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="uniqueness">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="sec-num">05</span>데이터 고유성</div>
+    <h2 class="sh reveal d1">이 데이터는<br><span class="hl">다른 곳에서 살 수 없습니다.</span></h2>
+    <p class="lead-text reveal d2">기존 신용평가사도 부가세 신고 데이터를 다루지만, 그것은 분기 단위 집계입니다. 테크핀의 월별 거래처별 정보는 더존비즈온 ERP라는 단 하나의 원천에서만 나옵니다.</p>
+
+    <div class="compare-wrap reveal d2">
+      <div class="compare-grid">
+        <div class="uc">
+          <div class="uc-hdr">기존 신용평가사<span class="sub-tag">CB / 결산 기반</span></div>
+          <div class="uc-row"><span class="x">연 1회 결산 재무</span></div>
+          <div class="uc-row"><span class="x">분기 부가세 집계</span></div>
+          <div class="uc-row"><span class="x">거래처별 정보 없음</span></div>
+          <div class="uc-row"><span class="x">본사 기준만 제공</span></div>
+          <div class="uc-row"><span class="x">결산 후 최대 15개월 공백</span></div>
+          <div class="uc-row"><span class="x">대표자 가지급금 없음</span></div>
+        </div>
+        <div class="uc us">
+          <div class="uc-hdr">테크핀레이팅스<span class="sub-tag">더존 ERP 원천</span></div>
+          <div class="uc-row"><span class="o">● 월별 추정 재무제표 4종</span></div>
+          <div class="uc-row"><span class="o">● 월별 거래처별 매출·매입</span></div>
+          <div class="uc-row"><span class="o">● 매출처·매입처 집중도/이탈</span></div>
+          <div class="uc-row"><span class="o">● 본·지사 합산 법인 단위</span></div>
+          <div class="uc-row"><span class="o">● 매월 갱신, 공백 없음</span></div>
+          <div class="uc-row"><span class="o">● 대표자 가지급금·ESG 파생변수</span></div>
+        </div>
+        <div class="uc">
+          <div class="uc-hdr">왜 가능한가<span class="sub-tag">ORIGIN</span></div>
+          <div class="uc-row">국내 ERP 1위, 세금계산서 원천</div>
+          <div class="uc-row">일 단위 전표 자동 수집(SuperBook)</div>
+          <div class="uc-row">거래 단위 원장에서 직접 산출</div>
+          <div class="uc-row">사업장 단위 데이터 합산 가능</div>
+          <div class="uc-row">실시간 적재 구조</div>
+          <div class="uc-row">기장 원장 직접 추출로 가능</div>
+        </div>
+      </div>
+      <div class="compare-stats">
+        <div class="cs"><div class="n">514<span class="u">만</span></div><div class="l">더존 ERP 기장 기업<br>회계프로그램 전자신고의 82%</div></div>
+        <div class="cs"><div class="n">491<span class="u">개</span></div><div class="l">월별 ERP 신용변수(CPS)<br>9개 정보영역 · 시계열 세분화</div></div>
+        <div class="cs"><div class="n">5%<span class="u">이내</span></div><div class="l">월별 재무 오차율 (매출 기준)<br>외감법인 1,438개사 교차 검증</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="sec-num">06</span>데이터 상품</div>
+    <h2 class="sh reveal d1">3가지 상품으로<br><span class="hl">금융기관 니즈를 충족</span>합니다</h2>
+    <p class="lead-text reveal d2">원천 RAW 데이터 API부터 플랫폼 서비스까지. 귀사의 IT 환경과 활용 목적에 맞는 방식으로 선택할 수 있습니다.</p>
+
+    <div class="prod-grid">
+      <div class="prod-card a reveal d2">
+        <div class="prod-card-head">
+          <div class="badge">RAW DATA API</div>
+          <h3>월별 매입매출 · 재무제표 · CPS</h3>
+          <p>기존 CB에 없는 월별 원천 데이터를 직접 여신시스템·모형에 투입</p>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>월별 매입매출</b> — 거래처별 매출·매입·채권·채무 원천 데이터. 분기단위 집계가 아닌 월별 거래처 단위 제공</div></div>
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>월별 재무제표</b> — 재무상태표·손익계산서·현금흐름표·원가명세서 4종. 결산 전 기중에 월 단위로 제공</div></div>
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>CPS 491변수</b> — 9개 정보영역 신용변수. AI/ML 모형에 최적화된 시계열 구조. 가지급금·전력비 등 대안정보 포함</div></div>
+        </div>
+      </div>
+      <div class="prod-card b reveal d3">
+        <div class="prod-card-head">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+            <div class="badge">PLATFORM A</div>
+            <button onclick="openPlatformModal('monitoring')" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;font-size:11px;font-weight:700;color:#1B3A5C;background:#EFF6FF;border:1.5px solid #BFDBFE;border-radius:5px;cursor:pointer;">상세보기 ↗</button>
+          </div>
+          <h3>크레디뷰 기업모니터링</h3>
+          <p>관리 기업들의 이상징후를 월 단위로 실시간 감지하는 EWS 플랫폼</p>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>EWS 대시보드</b> — 전체 관리기업 등급 분포·변동 한눈에 파악. 리스크 항목 자동 알림</div></div>
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>런웨이 분석</b> — 현금잔액·지출 기반 기업 생존 예측. 잔여 운영 가능 개월 수 제공</div></div>
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>거래처 관계망</b> — 거래처 집중도·이탈·부도 연쇄 위험 시각화</div></div>
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>월별 재무제표</b> — 결산 전 4종 재무제표 월 단위 제공 및 이상징후 탐지</div></div>
+        </div>
+      </div>
+      <div class="prod-card c reveal d4">
+        <div class="prod-card-head">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+            <div class="badge">PLATFORM B</div>
+            <button onclick="openPlatformModal('db')" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;font-size:11px;font-weight:700;color:#059669;background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:5px;cursor:pointer;">상세보기 ↗</button>
+          </div>
+          <h3>크레디뷰 기업DB조회</h3>
+          <p>심사·영업 단계에서 기업 정보를 즉시 조회하고 잠재 고객을 발굴</p>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>기업 상세조회</b> — 월별 매입·매출·재무제표 통합 조회. 결산 전 기중 재무흐름 사전 확인</div></div>
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>데이터 스튜디오</b> — 매출 조건·재무지표·업종으로 잠재 고객 발굴. 영업 대상 타겟팅 자동화</div></div>
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>이상거래 탐지</b> — 회전거래·가공매출·특수관계 이상 패턴 식별. 12개 체크리스트 자동 판별</div></div>
+          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>거래처 관계망</b> — 위험 거래처 연결 고리 시각화. 공급망 리스크 선별 지원</div></div>
+        </div>
+      </div>
+    </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px;" class="reveal d3">
+    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);">
+      <div style="background:#1B3A5C;padding:10px 14px;font-size:12px;font-weight:700;color:#fff;">크레디뷰 기업모니터링 — 실제 화면</div>
+      <span class="img-lightbox-trigger" onclick="openLightbox(this.querySelector('img'),\'크레디뷰 기업모니터링\')">
+        <img src="img/img_3.png" alt="크레디뷰 기업모니터링 실제 화면" style="width:100%;display:block;cursor:zoom-in;max-height:220px;object-fit:cover;object-position:top"/>
+      </span>
+      <div style="padding:8px 14px 12px;border-top:1px solid var(--border)">
+        <a href="https://ms.crediview.co.kr/landing" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#1B3A5C;text-decoration:none;">🔗 크레디뷰 기업모니터링 바로가기 ↗</a>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);">
+      <div style="background:#2563EB;padding:10px 14px;font-size:12px;font-weight:700;color:#fff;">크레디뷰 기업DB조회 — 실제 화면</div>
+      <span class="img-lightbox-trigger" onclick="openLightbox(this.querySelector('img'),\'크레디뷰 기업DB조회\')">
+        <img src="img/img_4.png" alt="크레디뷰 기업DB조회 실제 화면" style="width:100%;display:block;cursor:zoom-in;max-height:220px;object-fit:cover;object-position:top"/>
+      </span>
+      <div style="padding:8px 14px 12px;border-top:1px solid var(--border)">
+        <a href="https://db.crediview.co.kr/home" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#1B3A5C;text-decoration:none;">🔗 크레디뷰 기업DB조회 바로가기 ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="signals">
   <div class="wrap">
-    <div class="sec-label reveal"><span class="sec-num">04</span>결산이 놓치는 것</div>
+    <div class="sec-label reveal"><span class="sec-num">07</span>결산이 놓치는 것 · 모니터링</div>
     <h2 class="sh reveal d1">무너지는 과정은<br><span class="hl underline-draw">월 단위로만</span> 보입니다.</h2>
     <p class="lead-text reveal d2">"어쩌면 막을 수 있었던 회생 절차, 데이터는 이미 <strong>15개월 전부터</strong> 경고하고 있었습니다."</p>
+    <div class="reveal d2" style="margin-top:28px;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);">
+      <div style="background:#1B3A5C;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.55);letter-spacing:1.5px;margin-bottom:3px;">CASE STUDY · 실제 사례</div>
+          <div style="font-size:15px;font-weight:800;color:#fff;">정○각 — 유니콘 기대주에서 기업회생까지</div>
+        </div>
+        <div style="background:rgba(220,38,38,0.85);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">회생신청 25.07</div>
+      </div>
+      <div style="padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div>
+          <div style="font-size:12px;font-weight:800;color:#1B3A5C;margin-bottom:10px;">정○각이란?</div>
+          <div style="font-size:12px;color:#374151;line-height:1.85;">
+            정○각은 <strong>16년 설립된 축산물 유통 플랫폼 스타트업</strong>으로, 육가공·밀키트 등 신선식품을 온라인 판매했습니다. VC로부터 누적 <strong>1,200억 원 이상</strong>을 투자받은 유니콘 기대주로 주목받았으며, 22년에는 대상그룹의 유기농 식품 업체를 인수하며 공격적 외형 확장을 추진했습니다.
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:800;color:#DC2626;margin-bottom:10px;">무너진 과정</div>
+          <div style="font-size:12px;color:#374151;line-height:1.85;">
+            대규모 M&A 이후 차입성 자금이 급증하고 재무구조가 악화되었습니다. 24년 4월 <strong>완전 자본잠식</strong>에 진입했고, 현금잔액이 최저 32만원까지 추락했습니다. 결국 투자 유치 1년 만에 <strong>25년 7월 기업회생절차를 신청</strong>, VC들의 대규모 손실이 불가피해졌습니다.
+          </div>
+        </div>
+      </div>
+      <div style="padding:12px 20px;background:#FEF2F2;border-top:1px solid #FECACA;">
+        <div style="font-size:12px;color:#991B1B;line-height:1.7;">
+          만약 테크핀레이팅스 데이터를 활용했다면? — 24년 4월 완전자본잠식 시점부터 월별 자본총계 급락·현금잔액 하락·차입금의존도 80%+ 이상신호가 플랫폼에 실시간 반영되었을 것입니다. 결산을 기다리지 않고 <strong>최소 15개월 전</strong>에 선제 대응이 가능했습니다.
+        </div>
+      </div>
+    </div>
 
     <!-- ① 타임라인 -->
     <div class="reveal d2" style="margin-top:32px;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);">
@@ -1915,62 +2119,9 @@ footer {
   </div>
 </section>
 
-<section id="products">
-  <div class="wrap">
-    <div class="sec-label reveal"><span class="sec-num">05</span>데이터 상품</div>
-    <h2 class="sh reveal d1">3가지 상품으로<br><span class="hl">금융기관 니즈를 충족</span>합니다</h2>
-    <p class="lead-text reveal d2">원천 RAW 데이터 API부터 플랫폼 서비스까지. 귀사의 IT 환경과 활용 목적에 맞는 방식으로 선택할 수 있습니다.</p>
-
-    <div class="prod-grid">
-      <div class="prod-card a reveal d2">
-        <div class="prod-card-head">
-          <div class="badge">RAW DATA API</div>
-          <h3>월별 매입매출 · 재무제표 · CPS</h3>
-          <p>기존 CB에 없는 월별 원천 데이터를 직접 여신시스템·모형에 투입</p>
-        </div>
-        <div class="prod-card-body">
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>월별 매입매출</b> — 거래처별 매출·매입·채권·채무 원천 데이터. 분기단위 집계가 아닌 월별 거래처 단위 제공</div></div>
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>월별 재무제표</b> — 재무상태표·손익계산서·현금흐름표·원가명세서 4종. 결산 전 기중에 월 단위로 제공</div></div>
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>CPS 491변수</b> — 9개 정보영역 신용변수. AI/ML 모형에 최적화된 시계열 구조. 가지급금·전력비 등 대안정보 포함</div></div>
-        </div>
-      </div>
-      <div class="prod-card b reveal d3">
-        <div class="prod-card-head">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
-            <div class="badge">PLATFORM A</div>
-            <button onclick="openPlatformModal('monitoring')" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;font-size:11px;font-weight:700;color:#1B3A5C;background:#EFF6FF;border:1.5px solid #BFDBFE;border-radius:5px;cursor:pointer;">상세보기 ↗</button>
-          </div>
-          <h3>크레디뷰 기업모니터링</h3>
-          <p>관리 기업들의 이상징후를 월 단위로 실시간 감지하는 EWS 플랫폼</p>
-        </div>
-        <div class="prod-card-body">
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>EWS 대시보드</b> — 전체 관리기업 등급 분포·변동 한눈에 파악. 리스크 항목 자동 알림</div></div>
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>런웨이 분석</b> — 현금잔액·지출 기반 기업 생존 예측. 잔여 운영 가능 개월 수 제공</div></div>
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>거래처 관계망</b> — 거래처 집중도·이탈·부도 연쇄 위험 시각화</div></div>
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>월별 재무제표</b> — 결산 전 4종 재무제표 월 단위 제공 및 이상징후 탐지</div></div>
-        </div>
-      </div>
-      <div class="prod-card c reveal d4">
-        <div class="prod-card-head">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
-            <div class="badge">PLATFORM B</div>
-            <button onclick="openPlatformModal('db')" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;font-size:11px;font-weight:700;color:#059669;background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:5px;cursor:pointer;">상세보기 ↗</button>
-          </div>
-          <h3>크레디뷰 기업DB조회</h3>
-          <p>심사·영업 단계에서 기업 정보를 즉시 조회하고 잠재 고객을 발굴</p>
-        </div>
-        <div class="prod-card-body">
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>기업 상세조회</b> — 월별 매입·매출·재무제표 통합 조회. 결산 전 기중 재무흐름 사전 확인</div></div>
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>데이터 스튜디오</b> — 매출 조건·재무지표·업종으로 잠재 고객 발굴. 영업 대상 타겟팅 자동화</div></div>
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>이상거래 탐지</b> — 회전거래·가공매출·특수관계 이상 패턴 식별. 12개 체크리스트 자동 판별</div></div>
-          <div class="prod-feat"><div class="dot"></div><div class="txt"><b>거래처 관계망</b> — 위험 거래처 연결 고리 시각화. 공급망 리스크 선별 지원</div></div>
-        </div>
-      </div>
-    </div>
-
 <section id="credit-rating">
   <div class="wrap">
-    <div class="sec-label reveal"><span class="sec-num">06</span>크레디뷰 기업신용평가</div>
+    <div class="sec-label reveal"><span class="sec-num">08</span>크레디뷰 기업신용평가</div>
     <h2 class="sh reveal d1">결산 기다릴 필요 없이,<br><span class="hl">월 단위로 신용등급 갱신</span></h2>
     <p class="lead-text reveal d2">테크핀레이팅스는 금융위원회 인가를 받은 기업신용등급제공업자입니다. 더존 ERP 기반 월별 데이터로 AAA~D까지 10단계 기업신용등급을 제공합니다.</p>
 
@@ -2038,7 +2189,7 @@ footer {
 
 <section id="network-model">
   <div class="wrap">
-    <div class="sec-label reveal"><span class="sec-num">07</span>거래처 관계망 분석</div>
+    <div class="sec-label reveal"><span class="sec-num">09</span>거래처 관계망 분석</div>
     <h2 class="sh reveal d1">기업은 혼자 부실화되지 않습니다.<br><span class="hl">거래 네트워크로 연쇄 전파</span>됩니다.</h2>
     <p class="lead-text reveal d2">테크핀레이팅스는 세금계산서 기반 거래처별 매출·매입 데이터를 활용하여 기업 간 거래 네트워크를 구성하고 연쇄 부실 위험을 사전에 식별합니다.</p>
 
@@ -2384,105 +2535,6 @@ footer {
   </div>
 </section>
 
-<section id="casestudy">
-  <div class="wrap">
-    <div class="sec-label reveal"><span class="sec-num">09</span>동의서 이슈 · 테크핀레이팅스의 현재 대응 방안</div>
-    <h2 class="sh reveal d1">동의서 미확보로 인한 <span class="hl-red">커버리지 공백</span>,<br>테크핀레이팅스는 이렇게 <span class="hl">해결합니다</span></h2>
-    <p class="lead-text reveal d2">더존비즈온 ERP 원천 데이터는 존재하지만, 고객 동의가 확보되지 않은 기업은 제공 대상에서 제외됩니다. 이 구조적 한계를 테크핀레이팅스는 세 가지 방향으로 실질적으로 해소하고 있습니다.</p>
-
-    <div class="case-container reveal d2">
-      <div class="case-header">
-        <div class="cht">
-          <div class="eyebrow">동의서 구조 이해 — 데이터 공백이 아닌 동의 공백</div>
-          <h3>원천 데이터는 있다. 동의가 없을 뿐이다.</h3>
-        </div>
-        <div class="result-pill">● 3가지 해소 방안 운영 중</div>
-      </div>
-
-      <div class="framing-box" style="margin-top:24px;margin-bottom:28px">
-        <div class="fb-icon">📋</div>
-        <div class="fb-body">
-          <h4>동의서 이슈의 본질</h4>
-          <p>더존비즈온 ERP에는 421만 기업의 원천 데이터가 실시간으로 쌓입니다. 그러나 테크핀레이팅스가 이를 금융기관에 제공하려면 해당 기업의 <strong>정보 제공 동의</strong>가 필요합니다. 현재 약 100만 사업자의 동의를 확보한 상태이며, 나머지는 원천에 데이터가 있어도 제공이 불가합니다. 커버리지 숫자(44~45%)는 데이터 부재가 아니라 <strong>동의 미확보에 따른 수치</strong>입니다.</p>
-          <div style="margin-top:10px;padding:10px 14px;background:#F8FAFC;border-left:3px solid #6B7280;border-radius:0 6px 6px 0;font-size:12px;color:#4B5563;line-height:1.7;">
-            <strong style="color:#374151;">📌 동의가 필요한 법적 이유</strong><br>
-            신용정보법상 기업정보는 원칙적으로 정보주체 동의 없이 활용 가능하나, <strong>클라우드법(클라우드컴퓨팅법)</strong>상 클라우드에 저장된 데이터는 기업정보라도 정보주체의 동의가 요구되는 구조입니다. 더존 ERP 데이터가 클라우드 기반으로 수집·저장되는 만큼, 동의 확보분만 제공 가능한 구조가 형성된 것입니다. 테크핀레이팅스는 이 법 상충 문제를 금융위원회에 공식 제기한 바 있으며, 제도 개선을 지속 추진 중입니다.
-          </div>
-        </div>
-      </div>
-
-      <div class="case-body" style="grid-template-columns:1fr;gap:16px">
-        <div class="cm-box">
-          <div class="cm-label">✅ 방안 1 · 여신 동의서에 테크핀 편입</div>
-          <div class="cm-val" style="font-size:18px;font-family:var(--sans);font-weight:800;">계약 시 자동 확대</div>
-          <div class="cm-sub">금융기관과 계약 체결 시 기존 여신 동의서 항목에 테크핀레이팅스 정보 제공 동의를 포함시킵니다. 신규 차주가 여신을 받을 때마다 동의가 자동으로 확보되어 커버리지가 시간이 지날수록 지속 상승하는 구조입니다. 별도 동의 절차 없이 기존 여신 프로세스 안에서 해결됩니다. 현재 신한은행·캐피탈사 등 계약 기관을 통해 신규 차주 동의가 지속 누적되고 있습니다.</div>
-        </div>
-        <div class="cm-box">
-          <div class="cm-label">✅ 방안 2 · 보증기관 협력 통한 개인사업자 동의 확보</div>
-          <div class="cm-val" style="font-size:18px;font-family:var(--sans);font-weight:800;">개인사업자 커버리지 확대 추진</div>
-          <div class="cm-sub">경기신용보증재단 등 보증기관과의 협력을 통해 개인사업자 대상 동의서 확보를 적극 추진 중입니다. 개인사업자 커버리지는 2026년 하반기 서비스 오픈과 함께 본격 확대될 예정입니다.</div>
-        </div>
-        <div class="cm-box">
-          <div class="cm-label">✅ 방안 3 · 코피티션·카드사 협력을 통한 동의 채널 확장</div>
-          <div class="cm-val" style="font-size:18px;font-family:var(--sans);font-weight:800;">파트너십 통한 지속 확대</div>
-          <div class="cm-sub">신한은행과의 공급계약 및 데이터 활용 협력을 기반으로, NICE평가정보·KCB 등 기존 CB사와 MOU·NDA 기반 코피티션을 진행 중입니다. 카드사 등 다양한 금융기관과의 협업을 통해 동의 확보 채널을 지속적으로 확장하고 있으며, 이를 통해 커버리지 이슈는 시간이 지날수록 자연스럽게 해소될 구조입니다.</div>
-        </div>
-      </div>
-
-      <div class="case-outcomes" style="margin-top:24px">
-        <div class="co amber"><div class="co-n">현재 동의 확보</div><div class="co-l">약 100만 사업자<br>동의 기반 보유</div></div>
-        <div class="co blue"><div class="co-n">보증기관·세무사</div><div class="co-l">개인사업자 동의<br>확대 추진 중</div></div>
-        <div class="co green"><div class="co-n">코피티션 확장</div><div class="co-l">신한·NICE·KCB·카드사<br>동의 채널 지속 확대</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="uniqueness">
-  <div class="wrap">
-    <div class="sec-label reveal"><span class="sec-num">10</span>데이터 고유성</div>
-    <h2 class="sh reveal d1">이 데이터는<br><span class="hl">다른 곳에서 살 수 없습니다.</span></h2>
-    <p class="lead-text reveal d2">기존 신용평가사도 부가세 신고 데이터를 다루지만, 그것은 분기 단위 집계입니다. 테크핀의 월별 거래처별 정보는 더존비즈온 ERP라는 단 하나의 원천에서만 나옵니다.</p>
-
-    <div class="compare-wrap reveal d2">
-      <div class="compare-grid">
-        <div class="uc">
-          <div class="uc-hdr">기존 신용평가사<span class="sub-tag">CB / 결산 기반</span></div>
-          <div class="uc-row"><span class="x">연 1회 결산 재무</span></div>
-          <div class="uc-row"><span class="x">분기 부가세 집계</span></div>
-          <div class="uc-row"><span class="x">거래처별 정보 없음</span></div>
-          <div class="uc-row"><span class="x">본사 기준만 제공</span></div>
-          <div class="uc-row"><span class="x">결산 후 최대 15개월 공백</span></div>
-          <div class="uc-row"><span class="x">대표자 가지급금 없음</span></div>
-        </div>
-        <div class="uc us">
-          <div class="uc-hdr">테크핀레이팅스<span class="sub-tag">더존 ERP 원천</span></div>
-          <div class="uc-row"><span class="o">● 월별 추정 재무제표 4종</span></div>
-          <div class="uc-row"><span class="o">● 월별 거래처별 매출·매입</span></div>
-          <div class="uc-row"><span class="o">● 매출처·매입처 집중도/이탈</span></div>
-          <div class="uc-row"><span class="o">● 본·지사 합산 법인 단위</span></div>
-          <div class="uc-row"><span class="o">● 매월 갱신, 공백 없음</span></div>
-          <div class="uc-row"><span class="o">● 대표자 가지급금·ESG 파생변수</span></div>
-        </div>
-        <div class="uc">
-          <div class="uc-hdr">왜 가능한가<span class="sub-tag">ORIGIN</span></div>
-          <div class="uc-row">국내 ERP 1위, 세금계산서 원천</div>
-          <div class="uc-row">일 단위 전표 자동 수집(SuperBook)</div>
-          <div class="uc-row">거래 단위 원장에서 직접 산출</div>
-          <div class="uc-row">사업장 단위 데이터 합산 가능</div>
-          <div class="uc-row">실시간 적재 구조</div>
-          <div class="uc-row">기장 원장 직접 추출로 가능</div>
-        </div>
-      </div>
-      <div class="compare-stats">
-        <div class="cs"><div class="n">514<span class="u">만</span></div><div class="l">더존 ERP 기장 기업<br>회계프로그램 전자신고의 82%</div></div>
-        <div class="cs"><div class="n">491<span class="u">개</span></div><div class="l">월별 ERP 신용변수(CPS)<br>9개 정보영역 · 시계열 세분화</div></div>
-        <div class="cs"><div class="n">5%<span class="u">이내</span></div><div class="l">월별 재무 오차율 (매출 기준)<br>외감법인 1,438개사 교차 검증</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="qa">
   <div class="wrap">
     <div class="sec-label reveal"><span class="sec-num">11</span>현장 질문 & 답변</div>
@@ -2691,7 +2743,7 @@ footer {
 // 1. 사이드 네비 스크롤 감지
 // ══════════════════════════════════════
 const sideNav = document.getElementById('side-nav');
-const snSections = ['company-intro','data-advantage','premise','coverage','grade','signals','products','credit-rating','network-model','growth-rating','casestudy','uniqueness','qa','refs','timing','cta'];
+const snSections = ['company-intro','data-advantage','grade','coverage','premise','casestudy','uniqueness','products','signals','credit-rating','network-model','growth-rating','qa','refs','timing','cta'];
 const snItems = document.querySelectorAll('.sn-item');
 
 function scrollTo_(e, id) {
@@ -2917,6 +2969,7 @@ document.addEventListener('fullscreenchange', function() {
   }
 });
 </script>
+</section>
 
 <!-- ═══ 팝업 모달 모음 ═══ -->
 
@@ -3166,7 +3219,7 @@ document.addEventListener('keydown', function(e) {
 // 1. 사이드 네비 스크롤 감지
 // ══════════════════════════════════════
 const sideNav = document.getElementById('side-nav');
-const snSections = ['company-intro','data-advantage','premise','coverage','grade','signals','products','credit-rating','network-model','growth-rating','casestudy','uniqueness','qa','refs','timing','cta'];
+const snSections = ['company-intro','data-advantage','grade','coverage','premise','casestudy','uniqueness','products','signals','credit-rating','network-model','growth-rating','qa','refs','timing','cta'];
 const snItems = document.querySelectorAll('.sn-item');
 
 function scrollTo_(e, id) {
@@ -3628,28 +3681,6 @@ function switchTab(name) {
 
 
 
-<script>
-function openPlatformModal(type) {
-  document.getElementById('modal-' + type).style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closePlatformModal(type) {
-  document.getElementById('modal-' + type).style.display = 'none';
-  document.body.style.overflow = '';
-}
-function switchPlatformTab(platform, tab) {
-  var prefix = platform === 'monitoring' ? 'mon' : 'db';
-  var tabs = platform === 'monitoring' ? ['overview','dashboard','detail','finance','credit'] : ['overview','search','studio','fraud'];
-  var activeColor = platform === 'monitoring' ? '#2563EB' : '#059669';
-  tabs.forEach(function(t) {
-    document.getElementById(prefix + '-tab-' + t).style.color = (t === tab) ? activeColor : '#6B7280';
-    document.getElementById(prefix + '-tab-' + t).style.borderBottom = (t === tab) ? '2px solid ' + activeColor : 'none';
-    document.getElementById(prefix + '-panel-' + t).style.display = (t === tab) ? 'block' : 'none';
-  });
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') { closePlatformModal('monitoring'); closePlatformModal('db'); }
-});
-</script>
+
 </body>
 </html>
