@@ -1547,11 +1547,11 @@ footer {
         <div style="font-size:11px;color:#374151;line-height:1.7;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
             <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 재무제표 (BS/PL/CF)</span>
-            <a id="btn-finance" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;text-decoration:none;display:inline-block;" onclick="var m=document.getElementById('modal-finance');m.style.display='flex';document.body.style.overflow='hidden';return false;" href="#">ìì¸ë³´ê¸°</a>
+            <button type="button" id="btn-finance" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;text-decoration:none;display:inline-block;">상세보기</button>
           </div>
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
             <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 부가세</span>
-            <a id="btn-vat" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;text-decoration:none;display:inline-block;" onclick="var m=document.getElementById('modal-vat');m.style.display='flex';document.body.style.overflow='hidden';return false;" href="#">ìì¸ë³´ê¸°</a>
+            <button type="button" id="btn-vat" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;text-decoration:none;display:inline-block;">상세보기</button>
           </div>
           <div>• 신용평가 & 리스크 분석</div>
           <div>• 기업 종합 분석 리포트</div>
@@ -3296,6 +3296,31 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') { closePlatformModal('monitoring'); closePlatformModal('db'); }
 });
 </script>
+<script>
+document.getElementById('btn-finance').onclick = function() {
+  document.getElementById('modal-finance').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  return false;
+};
+document.getElementById('btn-vat').onclick = function() {
+  document.getElementById('modal-vat').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  return false;
+};
+document.querySelectorAll('.output-modal-close').forEach(function(el) {
+  el.onclick = function() {
+    var id = this.getAttribute('data-close');
+    document.getElementById('modal-' + id).style.display = 'none';
+    document.body.style.overflow = '';
+  };
+});
+document.getElementById('modal-finance').onclick = function(e) {
+  if (e.target === this) { this.style.display = 'none'; document.body.style.overflow = ''; }
+};
+document.getElementById('modal-vat').onclick = function(e) {
+  if (e.target === this) { this.style.display = 'none'; document.body.style.overflow = ''; }
+};
+</script>
 </body>
 </html>
 
@@ -3904,46 +3929,31 @@ function switchTab(name) {
   </div>
 </div>
 
+
 <script>
-(function() {
-  function bindBtn(id, modalId) {
-    var el = document.getElementById(id);
-    var modal = document.getElementById(modalId);
-    if (!el || !modal) return;
-    el.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    });
-  }
-  function bindClose(modalId) {
-    var modal = document.getElementById(modalId);
-    if (!modal) return;
-    modal.addEventListener('click', function(e) {
-      if (e.target === this) { this.style.display = 'none'; document.body.style.overflow = ''; }
-    });
-  }
-  function init() {
-    bindBtn('btn-finance', 'modal-finance');
-    bindBtn('btn-vat', 'modal-vat');
-    bindClose('modal-finance');
-    bindClose('modal-vat');
-    document.querySelectorAll('.output-modal-close').forEach(function(el) {
-      el.addEventListener('click', function(e) {
-        e.stopPropagation();
-        var id = this.getAttribute('data-close');
-        var m = document.getElementById('modal-' + id);
-        if (m) { m.style.display = 'none'; document.body.style.overflow = ''; }
-      });
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
+document.getElementById('btn-finance').onclick = function() {
+  document.getElementById('modal-finance').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  return false;
+};
+document.getElementById('btn-vat').onclick = function() {
+  document.getElementById('modal-vat').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  return false;
+};
+document.querySelectorAll('.output-modal-close').forEach(function(el) {
+  el.onclick = function() {
+    var id = this.getAttribute('data-close');
+    document.getElementById('modal-' + id).style.display = 'none';
+    document.body.style.overflow = '';
+  };
+});
+document.getElementById('modal-finance').onclick = function(e) {
+  if (e.target === this) { this.style.display = 'none'; document.body.style.overflow = ''; }
+};
+document.getElementById('modal-vat').onclick = function(e) {
+  if (e.target === this) { this.style.display = 'none'; document.body.style.overflow = ''; }
+};
 </script>
 </body>
 </html>
