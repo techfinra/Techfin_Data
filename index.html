@@ -1558,11 +1558,11 @@ footer {
         <div style="font-size:11px;color:#374151;line-height:1.7;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
             <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 재무제표 (BS/PL/CF)</span>
-            <button type="button" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;" onclick="var m=document.getElementById('modal-finance');if(m){m.style.display='flex';document.body.style.overflow='hidden'}">상세보기</button>
+            <button type="button" id="btn-finance-new" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;">상세보기</button>
           </div>
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
             <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 부가세</span>
-            <button type="button" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;" onclick="var m=document.getElementById('modal-vat');if(m){m.style.display='flex';document.body.style.overflow='hidden'}">상세보기</button>
+            <button type="button" id="btn-vat-new" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;">상세보기</button>
           </div>
           <div>• 신용평가 & 리스크 분석</div>
           <div>• 기업 종합 분석 리포트</div>
@@ -3308,13 +3308,11 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 <script>
-document.getElementById('btn-finance').onclick = function() {
-  document.getElementById('modal-finance').style.display = 'flex';
+
   document.body.style.overflow = 'hidden';
   return false;
 };
-document.getElementById('btn-vat').onclick = function() {
-  document.getElementById('modal-vat').style.display = 'flex';
+
   document.body.style.overflow = 'hidden';
   return false;
 };
@@ -3331,6 +3329,37 @@ document.getElementById('modal-finance').onclick = function(e) {
 document.getElementById('modal-vat').onclick = function(e) {
   if (e.target === this) { this.style.display = 'none'; document.body.style.overflow = ''; }
 };
+</script>
+
+<script>
+window.showModal = function(id) {
+  var el = document.getElementById(id);
+  if (el) { el.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+};
+window.hideModal = function(id) {
+  var el = document.getElementById(id);
+  if (el) { el.style.display = 'none'; document.body.style.overflow = ''; }
+};
+window.addEventListener('load', function() {
+  var bf = document.getElementById('btn-finance-new');
+  var bv = document.getElementById('btn-vat-new');
+  if (bf) bf.addEventListener('click', function(e) { e.stopPropagation(); window.showModal('modal-finance'); });
+  if (bv) bv.addEventListener('click', function(e) { e.stopPropagation(); window.showModal('modal-vat'); });
+
+  ['modal-finance','modal-vat'].forEach(function(id) {
+    var m = document.getElementById(id);
+    if (!m) return;
+    m.addEventListener('click', function(e) {
+      if (e.target === this) window.hideModal(id);
+    });
+    m.querySelectorAll('.output-modal-close').forEach(function(btn) {
+      btn.addEventListener('click', function() { window.hideModal(id); });
+    });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { window.hideModal('modal-finance'); window.hideModal('modal-vat'); }
+  });
+});
 </script>
 </body>
 </html>
@@ -3724,5 +3753,36 @@ function switchTab(name) {
 
 
 
+
+<script>
+window.showModal = function(id) {
+  var el = document.getElementById(id);
+  if (el) { el.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+};
+window.hideModal = function(id) {
+  var el = document.getElementById(id);
+  if (el) { el.style.display = 'none'; document.body.style.overflow = ''; }
+};
+window.addEventListener('load', function() {
+  var bf = document.getElementById('btn-finance-new');
+  var bv = document.getElementById('btn-vat-new');
+  if (bf) bf.addEventListener('click', function(e) { e.stopPropagation(); window.showModal('modal-finance'); });
+  if (bv) bv.addEventListener('click', function(e) { e.stopPropagation(); window.showModal('modal-vat'); });
+
+  ['modal-finance','modal-vat'].forEach(function(id) {
+    var m = document.getElementById(id);
+    if (!m) return;
+    m.addEventListener('click', function(e) {
+      if (e.target === this) window.hideModal(id);
+    });
+    m.querySelectorAll('.output-modal-close').forEach(function(btn) {
+      btn.addEventListener('click', function() { window.hideModal(id); });
+    });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { window.hideModal('modal-finance'); window.hideModal('modal-vat'); }
+  });
+});
+</script>
 </body>
 </html>
