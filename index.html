@@ -803,12 +803,22 @@ footer {
 .co-desc { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 28px; }
 .co-jv { display: flex; gap: 12px; flex-wrap: wrap; }
 .co-jv-chip {
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px; padding: 10px 16px;
-  display: flex; flex-direction: column; gap: 4px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 16px;
+  padding: 20px 28px;
+  display: flex; flex-direction: column; align-items:center; gap: 6px;
+  min-width: 130px;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s, border 0.2s, transform 0.2s;
 }
-.co-jv-chip .pct { font-family: var(--mono); font-size: 18px; font-weight: 700; color: #8FB8DE; }
-.co-jv-chip .nm { font-size: 12px; color: rgba(255,255,255,0.6); }
+.co-jv-chip:hover {
+  background: rgba(255,255,255,0.11);
+  border-color: rgba(255,255,255,0.24);
+  transform: translateY(-3px);
+}
+.co-jv-chip .pct { font-family: var(--mono); font-size: 22px; font-weight: 800; color: #8FB8DE; letter-spacing:-0.5px; }
+.co-jv-chip .nm { font-size: 12px; color: rgba(255,255,255,0.55); font-weight:500; }
 .co-history { display: flex; flex-direction: column; gap: 0; }
 .co-tl-item {
   display: grid; grid-template-columns: 70px 1fr;
@@ -1352,17 +1362,23 @@ footer {
         <p class="co-desc reveal d2">테크핀레이팅스는 더존비즈온·신한은행·SGI서울보증보험이 설립한 합작법인입니다. 세무기장 ERP 데이터를 기반으로 중소기업 대상 새로운 금융 생태계를 구축하고 있습니다.</p>
         <div class="co-jv reveal d3">
           <div class="co-jv-chip">
-            <img src="img/logo_douzone.png" alt="더존비즈온" style="height:28px;object-fit:contain;margin-bottom:6px;filter:brightness(0) invert(1);opacity:0.9;"/>
+            <div style="height:44px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+              <img src="img/logo_douzone.png" alt="더존비즈온" style="max-height:36px;max-width:120px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.95;"/>
+            </div>
             <span class="pct">46%</span>
             <span class="nm">더존비즈온</span>
           </div>
           <div class="co-jv-chip">
-            <img src="img/logo_shinhan.png" alt="신한은행" style="height:36px;object-fit:contain;margin-bottom:6px;mix-blend-mode:screen;opacity:0.95;"/>
+            <div style="height:44px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+              <img src="img/logo_shinhan.png" alt="신한은행" style="max-height:44px;max-width:80px;object-fit:contain;opacity:0.95;"/>
+            </div>
             <span class="pct">45%</span>
             <span class="nm">신한은행</span>
           </div>
           <div class="co-jv-chip">
-            <img src="img/logo_sgi.png" alt="SGI서울보증" style="height:40px;object-fit:contain;margin-bottom:6px;mix-blend-mode:screen;opacity:0.95;"/>
+            <div style="height:44px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+              <img src="img/logo_sgi.png" alt="SGI서울보증" style="max-height:44px;max-width:80px;object-fit:contain;opacity:0.95;"/>
+            </div>
             <span class="pct">9%</span>
             <span class="nm">SGI서울보증</span>
           </div>
