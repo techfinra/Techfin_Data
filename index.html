@@ -1560,7 +1560,7 @@ footer {
             <div style="margin-bottom:6px;">
             <div style="display:flex;align-items:center;justify-content:space-between;">
               <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 재무제표 (BS/PL/CF)</span>
-              <button id="toggleF" style="font-size:10px;font-weight:700;color:#2563EB;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:4px;padding:2px 10px;cursor:pointer;margin-left:8px;" onclick="var d=document.getElementById('detailF');var b=document.getElementById('toggleF');if(d.style.display==='none'){d.style.display='block';b.textContent='닫기 ▲';}else{d.style.display='none';b.textContent='상세 ▼';}">상세 ▼</button>
+              <button id="toggleF" style="font-size:10px;font-weight:700;color:#2563EB;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:4px;padding:2px 10px;cursor:pointer;margin-left:8px;" onclick="var d=document.getElementById('detailF');var b=document.getElementById('toggleF');if(d.style.display==='none'){d.style.display='block';b.textContent='닫기 ▲';}else{d.style.display='none';b.textContent='상세 ▼';}">상세 ▼</button> <button style="font-size:10px;font-weight:700;color:#fff;background:#2563EB;border:none;border-radius:4px;padding:2px 10px;cursor:pointer;margin-left:4px;" onclick="document.getElementById('modalF').style.display='flex';document.body.style.overflow='hidden'">팝업 ↗</button>
             </div>
             <div id="detailF" style="display:none;margin-top:10px;padding:14px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;font-size:11px;color:#374151;">
               <div style="font-weight:700;color:#1B3A5C;margin-bottom:8px;">매출·매입 정보 및 계정과목별 분개정보 기반 → 월별 재무제표 생성·제공</div>
@@ -1587,7 +1587,7 @@ footer {
             <div style="margin-bottom:6px;">
             <div style="display:flex;align-items:center;justify-content:space-between;">
               <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 부가세</span>
-              <button id="toggleV" style="font-size:10px;font-weight:700;color:#2563EB;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:4px;padding:2px 10px;cursor:pointer;margin-left:8px;" onclick="var d=document.getElementById('detailV');var b=document.getElementById('toggleV');if(d.style.display==='none'){d.style.display='block';b.textContent='닫기 ▲';}else{d.style.display='none';b.textContent='상세 ▼';}">상세 ▼</button>
+              <button id="toggleV" style="font-size:10px;font-weight:700;color:#2563EB;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:4px;padding:2px 10px;cursor:pointer;margin-left:8px;" onclick="var d=document.getElementById('detailV');var b=document.getElementById('toggleV');if(d.style.display==='none'){d.style.display='block';b.textContent='닫기 ▲';}else{d.style.display='none';b.textContent='상세 ▼';}">상세 ▼</button> <button style="font-size:10px;font-weight:700;color:#fff;background:#2563EB;border:none;border-radius:4px;padding:2px 10px;cursor:pointer;margin-left:4px;" onclick="document.getElementById('modalV').style.display='flex';document.body.style.overflow='hidden'">팝업 ↗</button>
             </div>
             <div id="detailV" style="display:none;margin-top:10px;padding:14px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;font-size:11px;color:#374151;">
               <div style="font-weight:700;color:#1B3A5C;margin-bottom:8px;">7개 테이블 · 4개 패키지 구성</div>
@@ -3375,6 +3375,78 @@ document.getElementById('modal-vat').onclick = function(e) {
 
 
 
+
+<div id="modalF" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;padding:16px;" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow=''}">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:860px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.4);">
+    <div style="background:linear-gradient(135deg,#1B3A5C,#2563EB);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:1px;margin-bottom:2px;">주요 산출물 · 상세</div>
+        <div style="font-size:16px;font-weight:800;color:#fff;">월별 재무제표</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px;">매출·매입 정보 및 계정과목별 분개정보 기반 → 월별 재무제표 생성·제공</div>
+      </div>
+      <span style="color:rgba(255,255,255,0.7);font-size:24px;cursor:pointer;padding:4px;" onclick="document.getElementById('modalF').style.display='none';document.body.style.overflow=''">✕</span>
+    </div>
+    <div style="overflow-y:auto;flex:1;padding:24px;">
+      <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:14px;margin-bottom:16px;font-size:13px;color:#1E40AF;line-height:1.7;">매출·매입 정보 및 계정과목별 분개정보 등 실제 수집 데이터를 기반으로 <strong>월별 재무제표를 생성·제공</strong>합니다.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div style="border-radius:10px;overflow:hidden;border:1px solid #E2E8F0;">
+          <div style="background:#374151;padding:10px;text-align:center;font-size:13px;font-weight:800;color:#fff;">AS IS</div>
+          <div style="padding:14px;background:#F8FAFC;display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#D1D5DB;border-radius:8px;padding:10px;text-align:center;font-size:12px;font-weight:700;color:#374151;">매출매입전표<br><span style="font-size:10px;font-weight:400;color:#6B7280;">기업의 실시간 매출·매입 전표</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+              <div style="background:#D1D5DB;border-radius:6px;padding:8px;text-align:center;font-size:11px;font-weight:700;color:#374151;">일반전표<br><span style="font-size:10px;font-weight:400;color:#6B7280;">미지급금·보통예금 등</span></div>
+              <div style="background:#D1D5DB;border-radius:6px;padding:8px;text-align:center;font-size:11px;font-weight:700;color:#374151;">참고정보<br><span style="font-size:10px;font-weight:400;color:#6B7280;">특허권·기계장치 등</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid #BFDBFE;">
+          <div style="background:#2563EB;padding:10px;text-align:center;font-size:13px;font-weight:800;color:#fff;">TO BE</div>
+          <div style="padding:14px;background:#EFF6FF;display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#fff;border:2px solid #2563EB;border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;font-weight:800;color:#1B3A5C;">재무상태표</span><span style="font-size:11px;font-weight:700;color:#2563EB;">257개</span></div>
+            <div style="background:#fff;border:2px solid #2563EB;border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;font-weight:800;color:#1B3A5C;">손익계산서</span><span style="font-size:11px;font-weight:700;color:#2563EB;">130개</span></div>
+            <div style="background:#fff;border:2px solid #2563EB;border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;font-weight:800;color:#1B3A5C;">제조원가명세서</span><span style="font-size:11px;font-weight:700;color:#2563EB;">30개</span></div>
+            <div style="background:#fff;border:2px solid #2563EB;border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;font-weight:800;color:#1B3A5C;">현금수지분석표</span><span style="font-size:11px;font-weight:700;color:#2563EB;">126개</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:12px 24px;background:#F8FAFC;border-top:1px solid #E2E8F0;text-align:right;flex-shrink:0;">
+      <span style="font-size:12px;font-weight:700;color:#1B3A5C;cursor:pointer;padding:6px 14px;border:1px solid #CBD5E1;border-radius:6px;" onclick="document.getElementById('modalF').style.display='none';document.body.style.overflow=''">닫기 ✕</span>
+    </div>
+  </div>
+</div>
+
+<div id="modalV" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;padding:16px;" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow=''}">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:920px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.4);">
+    <div style="background:linear-gradient(135deg,#1B3A5C,#2563EB);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:1px;margin-bottom:2px;">주요 산출물 · 상세</div>
+        <div style="font-size:16px;font-weight:800;color:#fff;">월별 부가세 데이터 테이블</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px;">7개 테이블 · 4개 패키지 구성</div>
+      </div>
+      <span style="color:rgba(255,255,255,0.7);font-size:24px;cursor:pointer;padding:4px;" onclick="document.getElementById('modalV').style.display='none';document.body.style.overflow=''">✕</span>
+    </div>
+    <div style="overflow-y:auto;flex:1;padding:24px;">
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:12px;min-width:600px;">
+          <thead><tr style="background:#374151;color:#fff;"><th style="padding:10px;text-align:center;width:40px;">No</th><th style="padding:10px;">테이블명</th><th style="padding:10px;">요약</th><th style="padding:10px;">주요 컬럼</th></tr></thead>
+          <tbody>
+            <tr style="background:#F8FAFC;"><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">1</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">월 거래처별 매출 정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">월단위 매출처별 부가세 매출정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">매출처명, 공급가액, 부가세, 매출유형, 총공급가액</td></tr>
+            <tr><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">2</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">월 거래처별 매입 정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">월단위 매입처별 부가세 매입정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">매입처명, 공급가액, 부가세, 매입유형, 총공급가액</td></tr>
+            <tr style="background:#F8FAFC;"><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">3</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">월 거래처별 매출채권</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">발생액−회수액 정보 제공</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">매출처명, 발생월, 매출채권발생액, 매출채권회수액</td></tr>
+            <tr><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">4</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">월 거래처별 매입채무</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">발생액−지급액 정보 제공</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">매입처명, 발생월, 매입채무발생액, 매입채무지급액</td></tr>
+            <tr style="background:#F8FAFC;"><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">5</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">매출채권 회수정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">채권 회수기간 제공</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">회수기간, 회수율, 가중평균 회수금액</td></tr>
+            <tr><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">6</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">매입채무 지급정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">채무 지급기간 제공</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">지급기간, 지급율, 가중평균 지급금액</td></tr>
+            <tr style="background:#F8FAFC;"><td style="padding:9px;text-align:center;color:#6B7280;">7</td><td style="padding:9px;font-weight:700;color:#1B3A5C;">분기 거래처별 매출·매입</td><td style="padding:9px;">분기단위 부가세 매출매입정보</td><td style="padding:9px;color:#6B7280;">분기매출액, 분기매입액, 과세기간, 분기공급건수</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="padding:12px 24px;background:#F8FAFC;border-top:1px solid #E2E8F0;text-align:right;flex-shrink:0;">
+      <span style="font-size:12px;font-weight:700;color:#1B3A5C;cursor:pointer;padding:6px 14px;border:1px solid #CBD5E1;border-radius:6px;" onclick="document.getElementById('modalV').style.display='none';document.body.style.overflow=''">닫기 ✕</span>
+    </div>
+  </div>
+</div>
 </body>
 </html>
 
@@ -3721,5 +3793,77 @@ function switchTab(name) {
 
 
 
+
+<div id="modalF" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;padding:16px;" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow=''}">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:860px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.4);">
+    <div style="background:linear-gradient(135deg,#1B3A5C,#2563EB);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:1px;margin-bottom:2px;">주요 산출물 · 상세</div>
+        <div style="font-size:16px;font-weight:800;color:#fff;">월별 재무제표</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px;">매출·매입 정보 및 계정과목별 분개정보 기반 → 월별 재무제표 생성·제공</div>
+      </div>
+      <span style="color:rgba(255,255,255,0.7);font-size:24px;cursor:pointer;padding:4px;" onclick="document.getElementById('modalF').style.display='none';document.body.style.overflow=''">✕</span>
+    </div>
+    <div style="overflow-y:auto;flex:1;padding:24px;">
+      <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:14px;margin-bottom:16px;font-size:13px;color:#1E40AF;line-height:1.7;">매출·매입 정보 및 계정과목별 분개정보 등 실제 수집 데이터를 기반으로 <strong>월별 재무제표를 생성·제공</strong>합니다.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div style="border-radius:10px;overflow:hidden;border:1px solid #E2E8F0;">
+          <div style="background:#374151;padding:10px;text-align:center;font-size:13px;font-weight:800;color:#fff;">AS IS</div>
+          <div style="padding:14px;background:#F8FAFC;display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#D1D5DB;border-radius:8px;padding:10px;text-align:center;font-size:12px;font-weight:700;color:#374151;">매출매입전표<br><span style="font-size:10px;font-weight:400;color:#6B7280;">기업의 실시간 매출·매입 전표</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+              <div style="background:#D1D5DB;border-radius:6px;padding:8px;text-align:center;font-size:11px;font-weight:700;color:#374151;">일반전표<br><span style="font-size:10px;font-weight:400;color:#6B7280;">미지급금·보통예금 등</span></div>
+              <div style="background:#D1D5DB;border-radius:6px;padding:8px;text-align:center;font-size:11px;font-weight:700;color:#374151;">참고정보<br><span style="font-size:10px;font-weight:400;color:#6B7280;">특허권·기계장치 등</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid #BFDBFE;">
+          <div style="background:#2563EB;padding:10px;text-align:center;font-size:13px;font-weight:800;color:#fff;">TO BE</div>
+          <div style="padding:14px;background:#EFF6FF;display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#fff;border:2px solid #2563EB;border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;font-weight:800;color:#1B3A5C;">재무상태표</span><span style="font-size:11px;font-weight:700;color:#2563EB;">257개</span></div>
+            <div style="background:#fff;border:2px solid #2563EB;border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;font-weight:800;color:#1B3A5C;">손익계산서</span><span style="font-size:11px;font-weight:700;color:#2563EB;">130개</span></div>
+            <div style="background:#fff;border:2px solid #2563EB;border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;font-weight:800;color:#1B3A5C;">제조원가명세서</span><span style="font-size:11px;font-weight:700;color:#2563EB;">30개</span></div>
+            <div style="background:#fff;border:2px solid #2563EB;border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;font-weight:800;color:#1B3A5C;">현금수지분석표</span><span style="font-size:11px;font-weight:700;color:#2563EB;">126개</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:12px 24px;background:#F8FAFC;border-top:1px solid #E2E8F0;text-align:right;flex-shrink:0;">
+      <span style="font-size:12px;font-weight:700;color:#1B3A5C;cursor:pointer;padding:6px 14px;border:1px solid #CBD5E1;border-radius:6px;" onclick="document.getElementById('modalF').style.display='none';document.body.style.overflow=''">닫기 ✕</span>
+    </div>
+  </div>
+</div>
+
+<div id="modalV" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;padding:16px;" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow=''}">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:920px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.4);">
+    <div style="background:linear-gradient(135deg,#1B3A5C,#2563EB);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:1px;margin-bottom:2px;">주요 산출물 · 상세</div>
+        <div style="font-size:16px;font-weight:800;color:#fff;">월별 부가세 데이터 테이블</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px;">7개 테이블 · 4개 패키지 구성</div>
+      </div>
+      <span style="color:rgba(255,255,255,0.7);font-size:24px;cursor:pointer;padding:4px;" onclick="document.getElementById('modalV').style.display='none';document.body.style.overflow=''">✕</span>
+    </div>
+    <div style="overflow-y:auto;flex:1;padding:24px;">
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:12px;min-width:600px;">
+          <thead><tr style="background:#374151;color:#fff;"><th style="padding:10px;text-align:center;width:40px;">No</th><th style="padding:10px;">테이블명</th><th style="padding:10px;">요약</th><th style="padding:10px;">주요 컬럼</th></tr></thead>
+          <tbody>
+            <tr style="background:#F8FAFC;"><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">1</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">월 거래처별 매출 정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">월단위 매출처별 부가세 매출정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">매출처명, 공급가액, 부가세, 매출유형, 총공급가액</td></tr>
+            <tr><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">2</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">월 거래처별 매입 정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">월단위 매입처별 부가세 매입정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">매입처명, 공급가액, 부가세, 매입유형, 총공급가액</td></tr>
+            <tr style="background:#F8FAFC;"><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">3</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">월 거래처별 매출채권</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">발생액−회수액 정보 제공</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">매출처명, 발생월, 매출채권발생액, 매출채권회수액</td></tr>
+            <tr><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">4</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">월 거래처별 매입채무</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">발생액−지급액 정보 제공</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">매입처명, 발생월, 매입채무발생액, 매입채무지급액</td></tr>
+            <tr style="background:#F8FAFC;"><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">5</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">매출채권 회수정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">채권 회수기간 제공</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">회수기간, 회수율, 가중평균 회수금액</td></tr>
+            <tr><td style="padding:9px;text-align:center;border-bottom:1px solid #E2E8F0;color:#6B7280;">6</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;font-weight:700;color:#1B3A5C;">매입채무 지급정보</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;">채무 지급기간 제공</td><td style="padding:9px;border-bottom:1px solid #E2E8F0;color:#6B7280;">지급기간, 지급율, 가중평균 지급금액</td></tr>
+            <tr style="background:#F8FAFC;"><td style="padding:9px;text-align:center;color:#6B7280;">7</td><td style="padding:9px;font-weight:700;color:#1B3A5C;">분기 거래처별 매출·매입</td><td style="padding:9px;">분기단위 부가세 매출매입정보</td><td style="padding:9px;color:#6B7280;">분기매출액, 분기매입액, 과세기간, 분기공급건수</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="padding:12px 24px;background:#F8FAFC;border-top:1px solid #E2E8F0;text-align:right;flex-shrink:0;">
+      <span style="font-size:12px;font-weight:700;color:#1B3A5C;cursor:pointer;padding:6px 14px;border:1px solid #CBD5E1;border-radius:6px;" onclick="document.getElementById('modalV').style.display='none';document.body.style.overflow=''">닫기 ✕</span>
+    </div>
+  </div>
+</div>
 </body>
 </html>
