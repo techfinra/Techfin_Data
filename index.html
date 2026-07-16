@@ -1557,12 +1557,12 @@ footer {
         <div style="font-size:11px;font-weight:800;color:#2563EB;margin-bottom:6px;">📋 주요 산출물</div>
         <div style="font-size:11px;color:#374151;line-height:1.7;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
-            <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 재무제표 (BS/PL/CF)</span>
-            <span id="open-finance" onmousedown="var m=document.getElementById(&quot;modal-finance&quot;);m.style.display=&quot;flex&quot;;document.body.style.overflow=&quot;hidden&quot;;" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;display:inline-block;">상세보기</span>
+            <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 재무제표 (BS/PL/CF)</span> <button id="btnF" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;margin-left:8px;">상세보기</button>
+            
           </div>
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
-            <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 부가세</span>
-            <span id="open-vat" onmousedown="var m=document.getElementById(&quot;modal-vat&quot;);m.style.display=&quot;flex&quot;;document.body.style.overflow=&quot;hidden&quot;;" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;flex-shrink:0;margin-left:8px;display:inline-block;">상세보기</span>
+            <span style="font-weight:800;color:#1B3A5C;font-size:12px;">• 월별 부가세</span> <button id="btnV" style="font-size:10px;font-weight:700;color:#2563EB;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:2px 8px;cursor:pointer;margin-left:8px;">상세보기</button>
+            
           </div>
           <div>• 신용평가 & 리스크 분석</div>
           <div>• 기업 종합 분석 리포트</div>
@@ -3332,37 +3332,16 @@ document.getElementById('modal-vat').onclick = function(e) {
 </script>
 
 
+
 <script>
-(function() {
-  function tryBind() {
-    var of = document.getElementById('open-finance');
-    var ov = document.getElementById('open-vat');
-    var mf = document.getElementById('modal-finance');
-    var mv = document.getElementById('modal-vat');
-    if (!of || !ov || !mf || !mv) { setTimeout(tryBind, 100); return; }
-    of.onclick = function(e) {
-      e.preventDefault(); e.stopPropagation();
-      mf.style.cssText += ';display:flex!important';
-      document.body.style.overflow = 'hidden';
-    };
-    ov.onclick = function(e) {
-      e.preventDefault(); e.stopPropagation();
-      mv.style.cssText += ';display:flex!important';
-      document.body.style.overflow = 'hidden';
-    };
-    mf.onclick = function(e) { if(e.target===this){this.style.display='none';document.body.style.overflow='';} };
-    mv.onclick = function(e) { if(e.target===this){this.style.display='none';document.body.style.overflow='';} };
-    document.querySelectorAll('.output-modal-close').forEach(function(el){
-      el.onclick = function(e){
-        e.stopPropagation();
-        document.getElementById('modal-finance').style.display='none';
-        document.getElementById('modal-vat').style.display='none';
-        document.body.style.overflow='';
-      };
-    });
-  }
-  tryBind();
-})();
+var btnF = document.getElementById('btnF');
+var btnV = document.getElementById('btnV');
+var mF = document.getElementById('modal-finance');
+var mV = document.getElementById('modal-vat');
+if(btnF && mF) btnF.addEventListener('click', function(){ mF.style.display='flex'; document.body.style.overflow='hidden'; });
+if(btnV && mV) btnV.addEventListener('click', function(){ mV.style.display='flex'; document.body.style.overflow='hidden'; });
+if(mF) mF.addEventListener('click', function(e){ if(e.target===this){ this.style.display='none'; document.body.style.overflow=''; } });
+if(mV) mV.addEventListener('click', function(e){ if(e.target===this){ this.style.display='none'; document.body.style.overflow=''; } });
 </script>
 </body>
 </html>
@@ -3758,37 +3737,16 @@ function switchTab(name) {
 
 
 
+
 <script>
-(function() {
-  function tryBind() {
-    var of = document.getElementById('open-finance');
-    var ov = document.getElementById('open-vat');
-    var mf = document.getElementById('modal-finance');
-    var mv = document.getElementById('modal-vat');
-    if (!of || !ov || !mf || !mv) { setTimeout(tryBind, 100); return; }
-    of.onclick = function(e) {
-      e.preventDefault(); e.stopPropagation();
-      mf.style.cssText += ';display:flex!important';
-      document.body.style.overflow = 'hidden';
-    };
-    ov.onclick = function(e) {
-      e.preventDefault(); e.stopPropagation();
-      mv.style.cssText += ';display:flex!important';
-      document.body.style.overflow = 'hidden';
-    };
-    mf.onclick = function(e) { if(e.target===this){this.style.display='none';document.body.style.overflow='';} };
-    mv.onclick = function(e) { if(e.target===this){this.style.display='none';document.body.style.overflow='';} };
-    document.querySelectorAll('.output-modal-close').forEach(function(el){
-      el.onclick = function(e){
-        e.stopPropagation();
-        document.getElementById('modal-finance').style.display='none';
-        document.getElementById('modal-vat').style.display='none';
-        document.body.style.overflow='';
-      };
-    });
-  }
-  tryBind();
-})();
+var btnF = document.getElementById('btnF');
+var btnV = document.getElementById('btnV');
+var mF = document.getElementById('modal-finance');
+var mV = document.getElementById('modal-vat');
+if(btnF && mF) btnF.addEventListener('click', function(){ mF.style.display='flex'; document.body.style.overflow='hidden'; });
+if(btnV && mV) btnV.addEventListener('click', function(){ mV.style.display='flex'; document.body.style.overflow='hidden'; });
+if(mF) mF.addEventListener('click', function(e){ if(e.target===this){ this.style.display='none'; document.body.style.overflow=''; } });
+if(mV) mV.addEventListener('click', function(e){ if(e.target===this){ this.style.display='none'; document.body.style.overflow=''; } });
 </script>
 </body>
 </html>
