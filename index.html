@@ -990,6 +990,48 @@ footer {
 .lc-pill .t { font-size: 14.5px; font-weight: 800; color: var(--navy); }
 .lc-pill .d { font-size: 11px; color: var(--ink3); margin-top: 4px; }
 
+/* ══ 역동적 커버리지 차트 ══ */
+.cb-flex { display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap; }
+.cb-bars { display: flex; align-items: flex-end; gap: 16px; }
+.cb-col { display: flex; flex-direction: column; align-items: center; }
+.cb-numbers { text-align: center; margin-bottom: 10px; min-height: 52px; opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
+.cb-numbers.go { opacity: 1; transform: translateY(0); }
+.cb-num-big { font-size: 22px; font-weight: 800; color: #141820; line-height:1; }
+.cb-num-big span { font-size: 13px; font-weight: 700; }
+.cb-num-sub { font-size: 10.5px; color: #6B7280; margin-top: 3px; }
+.cb-track { position: relative; width: 100px; height: 180px; }
+.cb-bar { position: absolute; left: 0; bottom: 0; width: 100%; border-radius: 6px 6px 0 0; transform-origin: bottom; transform: scaleY(0); transition: transform .85s cubic-bezier(.22,.61,.36,1); }
+.cb-bar.go { transform: scaleY(1); }
+.cb-bar-gray1 { height: 180px; background: #D1D5DB; }
+.cb-bar-gray2 { height: 106px; background: #D1D5DB; z-index: 1; }
+.cb-bar-blue { height: 87px; background: linear-gradient(180deg,#3B82F6,#1D4ED8); z-index: 2; }
+.cb-blue-content { position: absolute; left: 0; bottom: 0; width: 100%; height: 87px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 3; opacity: 0; transition: opacity .5s ease; pointer-events: none; }
+.cb-blue-content.go { opacity: 1; }
+.cb-blue-content .dz { font-size: 9px; font-weight: 800; color: #fff; letter-spacing: 1.5px; }
+.cb-blue-content .num { font-size: 21px; font-weight: 900; color: #fff; margin: 2px 0; line-height:1; }
+.cb-blue-content .num span { font-size: 12px; font-weight: 700; }
+.cb-blue-content .sub { font-size: 10px; color: rgba(255,255,255,.92); text-align: center; line-height: 1.4; margin-top:2px; }
+.cb-baseline { width: 100%; height: 1px; background: #E2E5EB; }
+.cb-label { margin-top: 10px; text-align: center; font-size: 11.5px; font-weight: 600; color: #374151; line-height: 1.5; }
+.cb-label .mk { color: #DC2626; }
+.cb-arrow-wrap { display: flex; align-items: center; justify-content: center; width: 30px; height: 180px; opacity: 0; transform: translateX(-8px); transition: opacity .5s ease, transform .5s ease; flex-shrink:0; }
+.cb-arrow-wrap.go { opacity: 1; transform: translateX(0); }
+.cb-arrow-wrap svg { width: 24px; height: 24px; }
+.cb-circle-area { display: flex; flex-direction: column; align-items: center; opacity: 0; transform: scale(.85); transition: opacity .55s cubic-bezier(.22,.61,.36,1.15), transform .55s cubic-bezier(.22,.61,.36,1.15); }
+.cb-circle-area.go { opacity: 1; transform: scale(1); }
+.cb-circle-year { font-size: 12.5px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.cb-circle { width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #3B82F6, #1D4ED8 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 14px 30px rgba(37,99,235,.32); }
+.cb-circle-pct { font-size: 18px; font-weight: 900; color: #fff; }
+.cb-circle-detail { font-size: 9.5px; color: rgba(255,255,255,.94); margin-top: 6px; line-height: 1.6; text-align:center; }
+.cb-caption { margin-top: 18px; font-size: 11.5px; color: var(--ink3); line-height: 1.6; }
+.cb-caption .src { display: block; margin-top: 3px; color: var(--ink4); font-size: 10.5px; }
+@media(max-width:860px) {
+  .cb-track { width: 92px; }
+  .cb-circle { width: 150px; height: 150px; }
+  .cb-flex { justify-content: center; }
+  .cb-arrow-wrap { width: 32px; }
+}
+
 .da-domains {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px;
 }
@@ -1520,53 +1562,54 @@ footer {
     <div class="da-intro reveal d3">
       <div class="da-coverage">
         <div class="da-cov-title">더존비즈온 전자신고 커버리지</div>
-        <svg viewBox="0 0 340 280" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, sans-serif">
 
-          <!-- 막대 기준: 869만=200px, 514만=118px(200×514/869), 421만=97px(200×421/869) -->
-          <!-- 바닥 y=220 -->
+        <div class="cb-flex" id="cov-chart">
+          <div class="cb-bars">
+            <div class="cb-col">
+              <div class="cb-numbers cb-anim" style="transition-delay:750ms">
+                <div class="cb-num-big">869<span>만</span></div>
+                <div class="cb-num-sub">법인: 101.4만</div>
+                <div class="cb-num-sub">개인: 768만</div>
+              </div>
+              <div class="cb-track">
+                <div class="cb-bar cb-bar-gray1 cb-anim" style="transition-delay:0ms"></div>
+              </div>
+              <div class="cb-baseline"></div>
+              <div class="cb-label"><span class="mk">*</span>국세청<br>전자신고</div>
+            </div>
 
-          <!-- ── 왼쪽 막대: 869만 ── -->
-          <!-- 숫자 -->
-          <text x="85" y="18" text-anchor="middle" font-size="22" font-weight="800" fill="#141820">869만</text>
-          <!-- 법인/개인 서브 -->
-          <text x="85" y="36" text-anchor="middle" font-size="11" fill="#6B7280">법인: 101.4만</text>
-          <text x="85" y="50" text-anchor="middle" font-size="11" fill="#6B7280">개인: 768만</text>
-          <!-- 막대 (top=58, height=162, bottom=220) -->
-          <rect x="20" y="58" width="130" height="162" rx="5" fill="#D1D5DB"/>
-
-          <!-- ── 오른쪽 막대: 514만 (height=118) ── -->
-          <!-- 숫자 -->
-          <text x="255" y="96" text-anchor="middle" font-size="22" font-weight="800" fill="#141820">514만</text>
-          <!-- 회색 상단: 93만 비율 = 118×(93/514)≈21px (top=104) -->
-          <rect x="190" y="102" width="130" height="21" rx="5" fill="#D1D5DB"/>
-          <!-- 파란 하단: 421만 비율 = 118×(421/514)≈97px (top=123, bottom=220) -->
-          <rect x="190" y="123" width="130" height="97" rx="5" fill="#2563EB"/>
-          <!-- DOUZONE 텍스트 -->
-          <text x="255" y="148" text-anchor="middle" font-size="10" font-weight="800" fill="#fff" letter-spacing="1.5">DOUZONE</text>
-          <text x="255" y="173" text-anchor="middle" font-size="24" font-weight="900" fill="#fff">421만</text>
-          <text x="255" y="190" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">더존비즈온</text>
-          <text x="255" y="204" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">기장 고객</text>
-
-          <!-- ── 바닥선 ── -->
-          <line x1="10" y1="220" x2="330" y2="220" stroke="#E2E5EB" stroke-width="1"/>
-
-          <!-- ── 하단 레이블 ── -->
-          <text x="85" y="236" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">국세청</text>
-          <text x="85" y="251" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">전자신고</text>
-
-          <text x="255" y="236" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">회계 프로그램</text>
-          <text x="255" y="251" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">전자신고</text>
-        </svg>
-
-        <!-- 하단 설명 라벨 -->
-        <div style="display:flex;gap:8px;margin-top:8px">
-          <div style="flex:1;padding:10px 12px;background:#F3F4F6;border-radius:8px;font-size:12px;color:var(--ink2);line-height:1.5;text-align:center">
-            국세청 전자신고 전체<br><strong style="color:var(--ink)">869만 기업</strong>
+            <div class="cb-col">
+              <div class="cb-numbers cb-anim" style="transition-delay:1850ms">
+                <div class="cb-num-big">514<span>만</span></div>
+              </div>
+              <div class="cb-track">
+                <div class="cb-bar cb-bar-gray2 cb-anim" style="transition-delay:1100ms"></div>
+                <div class="cb-bar cb-bar-blue cb-anim" style="transition-delay:2100ms"></div>
+                <div class="cb-blue-content cb-anim" style="transition-delay:2850ms">
+                  <div class="dz">DOUZONE</div>
+                  <div class="num">421<span>만</span></div>
+                  <div class="sub">더존비즈온<br>기장 고객</div>
+                </div>
+              </div>
+              <div class="cb-baseline"></div>
+              <div class="cb-label">회계 프로그램<br>전자신고</div>
+            </div>
           </div>
-          <div style="flex:1;padding:10px 12px;background:var(--navy-light);border:1px solid var(--blue-mid);border-radius:8px;font-size:12px;color:var(--ink2);line-height:1.5;text-align:center">
-            더존비즈온 커버 기업<br><strong style="color:var(--navy)">421만 · 평균 82%</strong>
+
+          <div class="cb-arrow-wrap cb-anim" style="transition-delay:3200ms">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <div class="cb-circle-area cb-anim" style="transition-delay:3450ms">
+            <div class="cb-circle-year">2026년 커버리지</div>
+            <div class="cb-circle">
+              <div class="cb-circle-pct">평균 82%</div>
+              <div class="cb-circle-detail">법인사업자 90.1만 (88.9%)<br>개인사업자 331만 (80.1%)</div>
+            </div>
           </div>
         </div>
+
+        <div class="cb-caption">회계 프로그램을 통해 전자 신고하는 국내 법인/개인 사업자 중 더존 이용고객 비중<span class="src">(출처*: 통계청 '2025년 국세통계 주요목 전자신고' 현황)</span></div>
       </div>
 
       <div>
@@ -3525,6 +3568,20 @@ const countIo = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); countIo.unobserve(e.target); } });
 }, { threshold: 0.3 });
 document.querySelectorAll('[data-target]').forEach(el => countIo.observe(el));
+
+// ══ 역동적 커버리지 차트 트리거 ══
+const covChartEl = document.getElementById('cov-chart');
+if (covChartEl) {
+  const covIo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        covChartEl.querySelectorAll('.cb-anim').forEach(el => el.classList.add('go'));
+        covIo.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.35 });
+  covIo.observe(covChartEl);
+}
 
 // ══════════════════════════════════════
 // 6. impact-word
