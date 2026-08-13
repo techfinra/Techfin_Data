@@ -859,35 +859,29 @@ footer {
   visibility: visible;
   transform: translateX(-50%) translateY(0) scale(1);
 }
-.reg-tooltip-wrap { position: relative; display: inline-block; cursor: help; border-bottom: 1px dashed rgba(255,255,255,0.4); }
-.reg-tooltip {
-  position: absolute;
-  bottom: calc(100% + 14px);
-  right: 0;
-  width: min(420px, 82vw);
-  background: #fff;
-  border-radius: 12px;
-  padding: 14px;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.32), 0 2px 8px rgba(0,0,0,0.12);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(8px) scale(0.96);
-  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(.2,.8,.3,1.2), visibility 0.25s;
-  z-index: 60;
+.reg-info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #BFDBFE;
+  font-size: 11px;
+  font-weight: 800;
+  font-style: normal;
+  cursor: pointer;
+  margin-left: 7px;
+  vertical-align: middle;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+  flex-shrink: 0;
 }
-.reg-tooltip img { display: block; width: 100%; height: auto; border-radius: 4px; }
-.reg-tooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%; right: 24px;
-  border: 7px solid transparent;
-  border-top-color: #fff;
-}
-.reg-tooltip-wrap:hover .reg-tooltip {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
+.reg-info-btn:hover {
+  background: #2563EB;
+  border-color: #2563EB;
+  color: #fff;
+  transform: scale(1.1);
 }
 .co-history { display: flex; flex-direction: column; gap: 0; }
 .co-tl-item {
@@ -1473,11 +1467,8 @@ footer {
         <div class="co-tl-item">
           <div class="co-yr">2024</div>
           <div class="co-tl-right">
-            <div class="reg-tooltip-wrap">
-              <div class="co-tl-evt">기업정보조회업 이전 <strong>본인가</strong> 취득</div>
-              <div class="co-tl-evt">기업신용등급제공업 <strong>본허가</strong> 취득</div>
-              <div class="reg-tooltip"><img src="img/credit_info_law_diagram.png" alt="신용정보법 개정 전후 기업신용조회업 분류 체계 — 기업정보조회업·기업신용등급제공업·기술신용평가"/></div>
-            </div>
+            <div class="co-tl-evt">기업정보조회업 이전 <strong>본인가</strong> 취득</div>
+            <div class="co-tl-evt">기업신용등급제공업 <strong>본허가</strong> 취득<span class="reg-info-btn" onclick="openLightbox(document.getElementById('reg-diagram-img'), '신용정보법 개정 전후 — 기업신용조회업 분류체계')" title="신용정보법 분류체계 자세히 보기">i</span><img id="reg-diagram-img" src="img/credit_info_law_diagram.png" alt="신용정보법 개정 전후 기업신용조회업 분류 체계 — 기업정보조회업·기업신용등급제공업·기술신용평가" style="display:none"></div>
             <div class="co-tl-evt">상호 변경 (주식회사 더존테크핀 → <strong>주식회사 테크핀레이팅스</strong>)</div>
           </div>
         </div>
