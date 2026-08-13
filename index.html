@@ -977,6 +977,18 @@ footer {
 .da-vs-card.good .head { color: var(--green); }
 .da-vs-card p { font-size: 12px; color: var(--ink2); line-height: 1.55; }
 .da-vs-arrow { display: flex; align-items: center; justify-content: center; color: var(--ink3); font-size: 16px; }
+.lc-head { font-size: 15px; font-weight: 800; color: var(--ink); display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+.lc-head::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #DC2626; flex-shrink: 0; }
+.lc-row { display: grid; grid-template-columns: 1fr 56px 1fr; align-items: center; }
+.lc-row + .lc-row { margin-top: 14px; }
+.lc-box { background: #fff; border: 1.5px solid #1F2937; border-radius: 12px; padding: 16px 20px; }
+.lc-box .t { font-size: 13.5px; font-weight: 800; color: var(--ink); line-height: 1.5; }
+.lc-box .t .mk { color: #DC2626; }
+.lc-box .d { font-size: 12px; color: var(--ink3); margin-top: 6px; line-height: 1.5; }
+.lc-line { height: 1px; background: #D1D5DB; width: 100%; }
+.lc-pill { background: #fff; border: 2px solid #2563EB; border-radius: 999px; padding: 15px 22px; text-align: center; }
+.lc-pill .t { font-size: 14.5px; font-weight: 800; color: var(--navy); }
+.lc-pill .d { font-size: 11px; color: var(--ink3); margin-top: 4px; }
 
 .da-domains {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px;
@@ -1303,6 +1315,8 @@ footer {
   .mp-features { grid-template-columns: 1fr; }
   .mp-mock { grid-template-columns: 1fr; }
   .rg-mobile { grid-template-columns: 1fr !important; }
+  .lc-row { grid-template-columns: 1fr !important; row-gap: 8px; }
+  .lc-line { width: 1px !important; height: 16px !important; margin: 0 auto; }
   .scroll-hint-mobile { display: block !important; }
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -1556,27 +1570,64 @@ footer {
       </div>
 
       <div>
-        <div class="da-vs-title">기존 CB와 테크핀레이팅스 비교</div>
-        <div class="da-vs" style="margin-top:12px">
-          <div class="da-vs-row">
-            <div class="da-vs-card bad">
-              <div class="head">⚠ 기존 CB</div>
-              <p>결산 후 6~15개월 이상 소요. 연 1회 결산 재무제표 중심. 대기업·외감기업 위주</p>
-            </div>
-            <div class="da-vs-arrow">→</div>
-            <div class="da-vs-card good">
-              <div class="head">✓ 테크핀레이팅스</div>
-              <p>월 단위 실시간 반영. 개인사업자·비외감 중소법인 커버. 본·지사 합산 법인단위 제공</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:20px;padding:16px;background:var(--amber-light);border:1px solid var(--amber-mid);border-radius:10px">
+        <div style="margin-top:14px;padding:16px;background:var(--amber-light);border:1px solid var(--amber-mid);border-radius:10px">
           <div style="font-size:13px;font-weight:700;color:var(--amber);margin-bottom:6px">📌 데이터 원천의 차이</div>
           <p style="font-size:13px;color:var(--ink2);line-height:1.65">더존 SuperBook 자동전표 처리 시스템이 세금계산서·현금영수증·카드전표·은행거래내역을 실시간 수집·자동 분개합니다. 결산 전 단계의 <strong>기장 원천 데이터</strong>를 월 단위로 제공하는 곳은 국내에서 테크핀레이팅스가 유일합니다.</p>
           <div style="margin-top:14px;border-radius:8px;overflow:hidden;border:1px solid var(--amber-mid);background:#fff">
             <span class="img-lightbox-trigger" onclick="openLightbox(this.querySelector('img'), '더존 세금계산서 전표 → SuperBook 자동 분개 프로세스')"><img src="img/img_1.png" alt="더존 SuperBook 자동전표 처리 시스템 — 세금계산서 원본과 전자세금계산서 분개 화면" style="cursor:zoom-in;width:100%;display:block;max-height:320px;object-fit:cover;object-position:center top"/></span>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal d3" style="margin-top:40px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px 36px;">
+      <div class="lc-head">기존 시장의 한계점</div>
+
+      <div class="lc-row">
+        <div class="lc-box">
+          <div class="t">매출채권 등 <span class="mk">결산정보</span>를 기준으로 산출</div>
+          <div class="d">결산 전, 월 단위 기업정보가 없음</div>
+        </div>
+        <div class="lc-line"></div>
+        <div class="lc-pill">
+          <div class="t">희소성</div>
+          <div class="d">(월 단위 & 거래처별 상거래정보)</div>
+        </div>
+      </div>
+
+      <div class="lc-row">
+        <div class="lc-box">
+          <div class="t">분기 or 연 단위 결산마감 시 제공 가능</div>
+          <div class="d">데이터 시차에 따라 6~15개월 이상 소요</div>
+        </div>
+        <div class="lc-line"></div>
+        <div class="lc-pill">
+          <div class="t">적시성</div>
+          <div class="d">(월 단위 세무·회계 정보 활용)</div>
+        </div>
+      </div>
+
+      <div class="lc-row">
+        <div class="lc-box">
+          <div class="t"><span class="mk">대기업·외감기업</span> 위주의 커버리지</div>
+          <div class="d">개인사업자·비외감 중소법인 데이터 부족</div>
+        </div>
+        <div class="lc-line"></div>
+        <div class="lc-pill">
+          <div class="t">효용성</div>
+          <div class="d">(개인사업자·중소법인 커버리지)</div>
+        </div>
+      </div>
+
+      <div class="lc-row">
+        <div class="lc-box">
+          <div class="t"><span class="mk">본사 기준</span> 데이터만을 제공</div>
+          <div class="d">지사 및 핵심 관계사 데이터 부족</div>
+        </div>
+        <div class="lc-line"></div>
+        <div class="lc-pill">
+          <div class="t">완전성</div>
+          <div class="d">(본/지사 합산 법인단위 정보 제공)</div>
         </div>
       </div>
     </div>
