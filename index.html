@@ -1014,12 +1014,18 @@ footer {
 .cb-baseline { width: 100%; height: 1px; background: #E2E5EB; }
 .cb-label { margin-top: 10px; text-align: center; font-size: 11.5px; font-weight: 600; color: #374151; line-height: 1.5; }
 .cb-label .mk { color: #DC2626; }
-.cb-arrow-wrap { display: flex; align-items: center; justify-content: center; width: 30px; height: 180px; opacity: 0; transform: translateX(-8px); transition: opacity .5s ease, transform .5s ease; flex-shrink:0; }
+.cb-arrow-wrap { display: flex; flex-direction: column; align-items: center; width: 30px; height: 298px; opacity: 0; transform: translateX(-8px); transition: opacity .5s ease, transform .5s ease; flex-shrink:0; }
 .cb-arrow-wrap.go { opacity: 1; transform: translateX(0); }
+.cb-arrow-top-spacer { height: 73px; flex-shrink: 0; }
+.cb-arrow-icon-zone { height: 180px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.cb-arrow-bottom-spacer { height: 45px; flex-shrink: 0; }
 .cb-arrow-wrap svg { width: 24px; height: 24px; }
-.cb-circle-area { display: flex; flex-direction: column; align-items: center; opacity: 0; transform: scale(.85); transition: opacity .55s cubic-bezier(.22,.61,.36,1.15), transform .55s cubic-bezier(.22,.61,.36,1.15); }
+.cb-circle-area { display: flex; flex-direction: column; align-items: center; height: 298px; opacity: 0; transform: scale(.85); transition: opacity .55s cubic-bezier(.22,.61,.36,1.15), transform .55s cubic-bezier(.22,.61,.36,1.15); }
 .cb-circle-area.go { opacity: 1; transform: scale(1); }
-.cb-circle-year { font-size: 12.5px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.cb-circle-label-zone { height: 73px; flex-shrink: 0; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 10px; }
+.cb-circle-icon-zone { height: 180px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.cb-circle-bottom-spacer { height: 45px; flex-shrink: 0; }
+.cb-circle-year { font-size: 12.5px; font-weight: 800; color: var(--navy); }
 .cb-circle { width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #3B82F6, #1D4ED8 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 14px 30px rgba(37,99,235,.32); }
 .cb-circle-pct { font-size: 18px; font-weight: 900; color: #fff; }
 .cb-circle-detail { font-size: 9.5px; color: rgba(255,255,255,.94); margin-top: 6px; line-height: 1.6; text-align:center; }
@@ -1597,15 +1603,20 @@ footer {
           </div>
 
           <div class="cb-arrow-wrap cb-anim" style="transition-delay:3200ms">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="cb-arrow-top-spacer"></div>
+            <div class="cb-arrow-icon-zone"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="cb-arrow-bottom-spacer"></div>
           </div>
 
           <div class="cb-circle-area cb-anim" style="transition-delay:3450ms">
-            <div class="cb-circle-year">2026년 커버리지</div>
-            <div class="cb-circle">
-              <div class="cb-circle-pct">평균 82%</div>
-              <div class="cb-circle-detail">법인사업자 90.1만 (88.9%)<br>개인사업자 331만 (80.1%)</div>
+            <div class="cb-circle-label-zone"><div class="cb-circle-year">2026년 커버리지</div></div>
+            <div class="cb-circle-icon-zone">
+              <div class="cb-circle">
+                <div class="cb-circle-pct">평균 82%</div>
+                <div class="cb-circle-detail">법인사업자 90.1만 (88.9%)<br>개인사업자 331만 (80.1%)</div>
+              </div>
             </div>
+            <div class="cb-circle-bottom-spacer"></div>
           </div>
         </div>
 
