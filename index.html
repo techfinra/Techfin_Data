@@ -835,7 +835,7 @@ footer {
   transition: opacity 0.25s ease, transform 0.25s cubic-bezier(.2,.8,.3,1.2), visibility 0.25s;
   z-index: 50;
 }
-.jv-tooltip img { display: block; height: 44px; width: auto; }
+.jv-tooltip img { display: block; max-width: 150px; max-height: 60px; width: auto; height: auto; object-fit: contain; }
 .jv-tooltip::after {
   content: '';
   position: absolute;
@@ -1404,10 +1404,12 @@ footer {
           <div class="co-jv-chip">
             <span class="pct">45%</span>
             <span class="nm">신한은행</span>
+            <div class="jv-tooltip"><img src="img/shinhan_logo.png" alt="신한은행 로고"/></div>
           </div>
           <div class="co-jv-chip">
             <span class="pct">9%</span>
             <span class="nm">SGI서울보증</span>
+            <div class="jv-tooltip"><img src="img/sgi_logo.png" alt="SGI서울보증 로고"/></div>
           </div>
         </div>
       </div>
